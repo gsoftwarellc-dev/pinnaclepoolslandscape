@@ -1,69 +1,153 @@
+import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+import { business } from "@/data/business";
+import { services } from "@/data/services";
+import { serviceAreas } from "@/data/serviceAreas";
+import ServiceCard from "@/components/ServiceCard";
+import CtaBanner from "@/components/CtaBanner";
+import AwardsBar from "@/components/AwardsBar";
+import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+  title: "Pool Builder & Landscaping Company in Elk Grove, CA",
+  description:
+    "Family-owned pool construction and landscaping company serving Elk Grove, Sacramento, Folsom, Roseville & more. Free 3D pool designs, licensed & insured.",
+  alternates: { canonical: "/" },
+};
+
+const stats = [
+  { value: "20+", label: "Years Experience", sub: "Concrete & construction" },
+  { value: "8", label: "Cities Served", sub: "Greater Sacramento region" },
+  { value: "9", label: "Core Services", sub: "Pools to full landscapes" },
+  { value: "100%", label: "Licensed & Insured", sub: "Family-owned & operated" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <>
+      <section className="relative flex min-h-[92svh] w-full flex-col items-center justify-center overflow-hidden bg-black">
         <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/background_hero.png"
+          alt="Custom pool and outdoor living space built by Pinnacle Pools and Landscape"
+          fill
           priority
+          className="object-cover"
+          sizes="100vw"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
+
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-4 pb-12 pt-16 text-center sm:pb-20">
+          <h1
+            className="font-bold tracking-tight text-white"
+            style={{ fontSize: "clamp(2.75rem, 7vw, 6rem)", lineHeight: 1.02 }}
+          >
+            Custom Pools
+            <br />
+            <span className="italic text-[#dac026]">&amp; Landscapes</span>
+            <br />
+            Sacramento, CA
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-neutral-100 sm:text-xl">
+            {business.name} designs and builds pools, decks, and landscapes across Elk Grove and
+            greater Sacramento — with a free 3D preview before we ever break ground.
           </p>
+
+          <div className="mb-14 mt-9 flex flex-wrap items-center justify-center gap-3 sm:mb-20 sm:gap-4">
+            <Link
+              href="/quote"
+              className="btn-glow group rounded-sm px-7 py-4 text-sm font-semibold text-black"
+              style={{ ["--btn-glow-bg" as string]: "#dac026" }}
+            >
+              Get a Free Estimate
+              <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+            <a
+              href={business.phoneHref}
+              className="btn-tactile rounded-sm border border-white/40 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur hover:border-[#dac026]"
+            >
+              Call {business.phone}
+            </a>
+          </div>
+
+          <div className="grid w-full grid-cols-2 gap-6 border-t border-white/20 pt-8 sm:grid-cols-4 sm:gap-8 sm:pt-10">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col items-center text-center">
+                <div
+                  className="mb-2 font-bold leading-none text-white"
+                  style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
+                >
+                  {s.value}
+                </div>
+                <div className="mb-0.5 text-sm font-semibold text-white">{s.label}</div>
+                <div className="text-sm text-neutral-300">{s.sub}</div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      <AwardsBar />
+
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:py-28">
+        <Reveal className="mx-auto mb-14 max-w-2xl text-center sm:mb-20">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+            What We Do
+          </span>
+          <h2
+            className="mt-3 font-bold tracking-tight text-black"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Our Services
+          </h2>
+          <p className="mt-4 text-lg text-neutral-600">
+            From pool construction to full landscape design, we handle every part of your
+            backyard project.
+          </p>
+        </Reveal>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, i) => (
+            <Reveal key={service.slug} delay={i * 60}>
+              <ServiceCard service={service} />
+            </Reveal>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="bg-black py-20 sm:py-28">
+        <div className="mx-auto max-w-6xl px-4">
+          <Reveal className="mx-auto mb-14 max-w-2xl text-center sm:mb-20">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#dac026]">
+              Where We Work
+            </span>
+            <h2
+              className="mt-3 font-bold tracking-tight text-white"
+              style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+            >
+              Areas We Serve
+            </h2>
+            <p className="mt-4 text-lg text-neutral-400">
+              Proudly serving homeowners across the greater Sacramento region.
+            </p>
+          </Reveal>
+          <Reveal className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {serviceAreas.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/service-areas/${area.slug}`}
+                className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-center text-sm font-medium text-white transition hover:border-[#dac026] hover:text-[#dac026]"
+              >
+                {area.city}, {area.state}
+              </Link>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      <CtaBanner />
+    </>
   );
 }
