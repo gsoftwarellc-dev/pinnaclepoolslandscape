@@ -47,17 +47,18 @@ export const testimonials = [
     name: "Judy T.",
     city: "Sacramento",
     quote:
-      "My backyard looks amazing. One of the most important things to me was that he and his crew were on time.",
+      "My backyard looks amazing even better than I imagined it would look. Terry proved to be the best contractor I have worked with. He explained his ideas and listened to mine. It turned out just like I wanted. Terry kept in touch with me before and during the job. One of the most important thing to me is he and his crew were on time. I would recommend Pinnacle Landscape Development for you jobs. Terry is great and I'm one happy lady.",
   },
   {
     name: "Jane S.",
     city: "Folsom",
     quote:
-      "This is one of my favorite companies to work with — very pleasant through the whole process.",
+      "Terry at Pinnacle was great to work with. He promptly returned phone calls, showed up when he said he would, did what he said he would do and then some to make the driveway look great, and was very pleasant through the whole process. This is one of my favorite companies that has done work on my home. I would highly recommend them.",
   },
   {
     name: "Mike M.",
     city: "Sacramento",
-    quote: "Very punctual. Executed on time and within budget.",
+    quote:
+      "Working with Terry was great from the bid process through the implementation!! Very punctual, explained everything he was going to do, and executed on time within the original budget!! Would definitely use Pinnacle Landscape Development again!",
   },
 ] as const;

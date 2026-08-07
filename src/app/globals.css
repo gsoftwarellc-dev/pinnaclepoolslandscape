@@ -48,21 +48,23 @@
 }
 
 /* Reviews marquee */
-@keyframes marquee-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .marquee-left {
   animation: marquee-left var(--speed, 30s) linear infinite;
+  /* Keep scrolling on hover/touch; the row must never stop. */
+  animation-play-state: running !important;
+  /* The track holds two identical copies, so shifting by half plus half a gap
+     lands copy 2 exactly where copy 1 began — a seamless, endless loop. */
+  padding-right: var(--gap, 1.25rem);
+  will-change: transform;
 }
 
-.marquee-row:hover .marquee-left {
-  animation-play-state: paused;
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(-50% - (var(--gap, 1.25rem) / 2)), 0, 0);
+  }
 }
 
 /* Gradient-edge CTA button — animated rainbow border via dual background layers */

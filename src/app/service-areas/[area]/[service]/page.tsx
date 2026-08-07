@@ -98,8 +98,8 @@ export default async function ServiceInAreaPage({
       ))}
 
       {/* Hero */}
-      <section className="bg-[#faf6e0]">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 lg:grid-cols-2 lg:py-20">
+      <section className="flex min-h-[70svh] items-center bg-[#faf6e0]">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-14 lg:grid-cols-2 lg:py-20">
           <div>
             <nav aria-label="Breadcrumb" className="text-sm text-neutral-500">
               <Link href="/" className="hover:underline">

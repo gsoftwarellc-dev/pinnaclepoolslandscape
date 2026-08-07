@@ -4,7 +4,7 @@ import { services } from "@/data/services";
 import { serviceAreas } from "@/data/serviceAreas";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/service-areas", "/gallery", "/contact", "/quote"].map((path) => ({
+  const staticRoutes = ["", "/service-areas", "/gallery", "/financing", "/contact", "/quote"].map((path) => ({
     url: new URL(path, business.url).toString(),
     lastModified: new Date(),
   }));

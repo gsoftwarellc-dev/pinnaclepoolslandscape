@@ -8,6 +8,7 @@ import ServiceCard from "@/components/ServiceCard";
 import CtaBanner from "@/components/CtaBanner";
 import AwardsBar from "@/components/AwardsBar";
 import Reveal from "@/components/Reveal";
+import Reviews from "@/components/Reviews";
 
 export const metadata: Metadata = {
   title: "Pool Builder & Landscaping Company in Elk Grove, CA",
@@ -26,7 +27,7 @@ const stats = [
 export default function Home() {
   return (
     <>
-      <section className="relative flex min-h-[92svh] w-full flex-col items-center justify-center overflow-hidden bg-black">
+      <section className="relative flex min-h-[70svh] w-full flex-col items-center justify-center overflow-hidden bg-black">
         <Image
           src="/background_hero.png"
           alt="Custom pool and outdoor living space built by Pinnacle Pools and Landscape"
@@ -116,6 +117,74 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-28 sm:py-36 lg:py-44">
+        <div className="grid items-center gap-12 lg:min-h-[36rem] lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+              Custom 3D Pool Design
+            </span>
+            <h2
+              className="mt-3 font-bold tracking-tight text-black"
+              style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+            >
+              See Your Custom Pool in 3D
+              <br />
+              Before We Break Ground
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-neutral-600">
+              Every custom pool we build comes with a professional 3D model, so you don&apos;t
+              just see your new backyard — you experience it. Walk through the design, adjust
+              the details, and know exactly what you&apos;re getting before construction ever
+              starts.
+            </p>
+            <ul className="mt-7 space-y-3">
+              {[
+                "Free 3D design preview with every custom pool",
+                "Adjust shape, finishes, and features before we start",
+                "Licensed, insured, and family-owned since day one",
+              ].map((point) => (
+                <li key={point} className="flex gap-3 text-neutral-700">
+                  <span aria-hidden className="mt-0.5 shrink-0 font-bold text-[#8a7315]">
+                    ✓
+                  </span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link
+                href="/quote"
+                className="btn-tactile rounded-md bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-[#dac026] hover:text-black"
+              >
+                Get Your Free 3D Design
+              </Link>
+              <a
+                href={business.phoneHref}
+                className="btn-tactile rounded-md border border-black/15 px-6 py-3 text-sm font-semibold text-black hover:border-[#dac026]"
+              >
+                Call {business.phone}
+              </a>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120} className="h-full">
+            <div className="relative h-full">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl lg:aspect-auto lg:h-full lg:min-h-[34rem]">
+                <Image
+                  src="/new/pool-raised-spa-tile-waterfall.jpg"
+                  alt="Custom pool with a raised tile spa and waterfall feature built by Pinnacle Pools and Landscape"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <Reviews />
 
       <section className="bg-black py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4">

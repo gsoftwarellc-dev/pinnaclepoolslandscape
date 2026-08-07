@@ -87,6 +87,9 @@ export default function Header() {
           <Link href="/gallery" className="py-2 hover:text-[#8a7315]">
             Gallery
           </Link>
+          <Link href="/financing" className="py-2 hover:text-[#8a7315]">
+            Financing
+          </Link>
           <Link href="/contact" className="py-2 hover:text-[#8a7315]">
             Contact
           </Link>
@@ -187,6 +190,9 @@ export default function Header() {
 
             <Link href="/gallery" className="rounded-md px-2 py-3 hover:bg-slate-50">
               Gallery
+            </Link>
+            <Link href="/financing" className="rounded-md px-2 py-3 hover:bg-slate-50">
+              Financing
             </Link>
             <Link href="/contact" className="rounded-md px-2 py-3 hover:bg-slate-50">
               Contact

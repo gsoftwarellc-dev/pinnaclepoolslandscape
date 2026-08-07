@@ -98,6 +98,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/financing" className="hover:text-[#dac026]">
+                Financing
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="hover:text-[#dac026]">
                 Contact Us
               </Link>

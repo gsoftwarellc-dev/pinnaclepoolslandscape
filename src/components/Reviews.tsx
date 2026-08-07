@@ -17,7 +17,7 @@ function Stars({ count = 5 }: { count?: number }) {
 
 function ReviewCard({ review }: { review: (typeof testimonials)[number] }) {
   return (
-    <div className="group w-80 shrink-0 rounded-[10px] border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-black/30 hover:shadow-md">
+    <div className="group flex h-full w-[22rem] shrink-0 flex-col rounded-[10px] border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-black/30 hover:shadow-md sm:w-[26rem]">
       <div className="mb-4 flex items-center gap-3">
         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-black text-sm font-bold text-white">
           {review.name.charAt(0)}
@@ -28,7 +28,7 @@ function ReviewCard({ review }: { review: (typeof testimonials)[number] }) {
         </div>
       </div>
       <Stars />
-      <p className="text-sm leading-relaxed text-neutral-700">&ldquo;{review.quote}&rdquo;</p>
+      <p className="flex-1 text-sm leading-relaxed text-neutral-700">&ldquo;{review.quote}&rdquo;</p>
     </div>
   );
 }
@@ -67,8 +67,9 @@ export default function Reviews() {
 
       <div className="marquee-row overflow-hidden">
         <div
-          className="marquee-left flex w-max gap-5"
-          style={{ ["--speed" as string]: "28s" }}
+          className="marquee-left flex w-max items-stretch gap-5"
+          // --gap must match the `gap-5` above (1.25rem) for the loop to be seamless.
+          style={{ ["--speed" as string]: "28s", ["--gap" as string]: "1.25rem" }}
         >
           {doubled.map((review, i) => (
             <ReviewCard key={`${review.name}-${i}`} review={review} />

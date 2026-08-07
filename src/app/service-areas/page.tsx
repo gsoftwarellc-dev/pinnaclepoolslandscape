@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function ServiceAreasPage() {
   return (
     <>
-      <section className="bg-[#faf6e0]">
-        <div className="mx-auto max-w-4xl px-4 py-16 text-center">
+      <section className="flex min-h-[70svh] items-center bg-[#faf6e0]">
+        <div className="mx-auto w-full max-w-4xl px-4 py-16 text-center">
           <h1 className="text-4xl font-bold text-slate-900">Areas We Serve</h1>
           <p className="mt-4 text-lg text-slate-700">
             We build pools and landscapes for homeowners throughout the greater Sacramento

@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-black">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:py-20">
+      <section className="flex min-h-[70svh] items-center bg-black">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:py-20">
           <div>
             <Badge className="bg-[#dac026] text-black hover:bg-[#dac026]">
               {services.length} Services
