@@ -85,7 +85,7 @@ export default async function ServicePage({
             <p className="mt-4 text-lg text-neutral-700">{service.description}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/quote"
+                href="/estimate"
                 className="btn-glow rounded-sm px-6 py-3.5 text-sm font-semibold text-white"
                 style={{ ["--btn-glow-bg" as string]: "#000000" }}
               >
@@ -159,7 +159,7 @@ export default async function ServicePage({
         </div>
         <div className="mt-10 text-center">
           <Link
-            href="/quote"
+            href="/estimate"
             className="btn-tactile inline-block rounded-md bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-[#dac026] hover:text-black"
           >
             Start With a Free Estimate

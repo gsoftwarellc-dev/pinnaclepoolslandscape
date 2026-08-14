@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { business } from "@/data/business";
 import { services } from "@/data/services";
@@ -14,12 +13,6 @@ const sortedAreas = [...serviceAreas].sort((a, b) =>
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-
-  // Close the drawer whenever navigation happens.
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   // Lock body scroll while the drawer is open.
   useEffect(() => {
@@ -45,7 +38,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 text-base font-semibold text-black lg:flex">
+        <nav className="hidden items-center gap-5 whitespace-nowrap text-[0.95rem] font-semibold text-black xl:flex 2xl:gap-7 2xl:text-base">
           <Link href="/" className="py-2 hover:text-[#8a7315]">
             Home
           </Link>
@@ -70,7 +63,7 @@ export default function Header() {
               href="/service-areas"
               className="flex items-center gap-1 py-2 hover:text-[#8a7315]"
             >
-              Areas We Serve
+              Areas
             </Link>
             <div className="invisible absolute left-0 top-full w-64 rounded-lg border border-black/10 bg-white p-2 text-sm font-medium opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
               {sortedAreas.map((area) => (
@@ -87,26 +80,29 @@ export default function Header() {
           <Link href="/gallery" className="py-2 hover:text-[#8a7315]">
             Gallery
           </Link>
+          <Link href="/process" className="py-2 hover:text-[#8a7315]">
+            Process
+          </Link>
+          <Link href="/resources" className="py-2 hover:text-[#8a7315]">
+            Guides
+          </Link>
           <Link href="/financing" className="py-2 hover:text-[#8a7315]">
             Financing
-          </Link>
-          <Link href="/contact" className="py-2 hover:text-[#8a7315]">
-            Contact
           </Link>
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
           <a
             href={business.phoneHref}
-            className="hidden text-base font-bold text-black sm:block"
+            className="hidden whitespace-nowrap text-[0.95rem] font-bold text-black xl:block 2xl:text-base"
           >
             {business.phone}
           </a>
           <Link
-            href="/quote"
-            className="hidden rounded-md bg-black px-5 py-2.5 text-base font-semibold text-white hover:bg-[#dac026] hover:text-black sm:block"
+            href="/estimate"
+            className="hidden whitespace-nowrap rounded-md bg-black px-4 py-2.5 text-[0.95rem] font-semibold text-white hover:bg-[#dac026] hover:text-black sm:block xl:px-5 2xl:text-base"
           >
-            Get a Quote
+            Free 3D Design
           </Link>
 
           <button
@@ -115,7 +111,7 @@ export default function Header() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            className="-mr-1 inline-flex h-11 w-11 items-center justify-center rounded-md text-black hover:bg-slate-100 lg:hidden"
+            className="-mr-1 inline-flex h-11 w-11 items-center justify-center rounded-md text-black hover:bg-slate-100 xl:hidden"
           >
             {open ? (
               <svg
@@ -151,9 +147,14 @@ export default function Header() {
       {open && (
         <div
           id="mobile-menu"
-          className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-black/10 bg-white lg:hidden"
+          className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-black/10 bg-white xl:hidden"
         >
-          <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 text-base font-semibold text-black">
+          <nav
+            onClick={(e) => {
+              if ((e.target as HTMLElement).closest("a")) setOpen(false);
+            }}
+            className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 text-base font-semibold text-black"
+          >
             <Link href="/" className="rounded-md px-2 py-3 hover:bg-slate-50">
               Home
             </Link>
@@ -191,25 +192,42 @@ export default function Header() {
             <Link href="/gallery" className="rounded-md px-2 py-3 hover:bg-slate-50">
               Gallery
             </Link>
+            <Link href="/process" className="rounded-md px-2 py-3 hover:bg-slate-50">
+              Process
+            </Link>
+            <Link href="/resources" className="rounded-md px-2 py-3 hover:bg-slate-50">
+              Pool Buying Guides
+            </Link>
             <Link href="/financing" className="rounded-md px-2 py-3 hover:bg-slate-50">
               Financing
+            </Link>
+            <Link href="/schedule" className="rounded-md px-2 py-3 hover:bg-slate-50">
+              Schedule a Consultation
             </Link>
             <Link href="/contact" className="rounded-md px-2 py-3 hover:bg-slate-50">
               Contact
             </Link>
 
             <div className="mt-3 flex flex-col gap-3 border-t border-black/10 pt-4">
-              <a
-                href={business.phoneHref}
-                className="rounded-md border border-black/15 px-4 py-3 text-center font-bold text-black"
-              >
-                Call {business.phone}
-              </a>
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href={business.phoneHref}
+                  className="rounded-md border border-black/15 px-4 py-3 text-center font-bold text-black"
+                >
+                  Call
+                </a>
+                <a
+                  href={business.smsHref}
+                  className="rounded-md border border-black/15 px-4 py-3 text-center font-bold text-black"
+                >
+                  Text
+                </a>
+              </div>
               <Link
-                href="/quote"
-                className="rounded-md bg-black px-4 py-3 text-center font-semibold text-white"
+                href="/estimate"
+                className="rounded-md bg-[#dac026] px-4 py-3 text-center font-bold text-black"
               >
-                Get a Quote
+                Start Your Free 3D Design
               </Link>
             </div>
           </nav>

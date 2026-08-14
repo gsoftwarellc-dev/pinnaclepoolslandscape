@@ -109,7 +109,7 @@ export const serviceAreas: ServiceArea[] = [
         a: "Yes. We regularly work in Serrano, Blackstone, and Promontory, and we're familiar with their design review boards' submission requirements and contractor rules.",
       },
     ],
-    nearby: ["folsom", "roseville", "rancho-cordova"],
+    nearby: ["folsom", "roseville", "rancho-cordova", "granite-bay"],
   },
   {
     slug: "sacramento",
@@ -201,7 +201,7 @@ export const serviceAreas: ServiceArea[] = [
         a: "Gentle slopes often add little; steeper grades may need retaining walls or a raised pool wall, which we engineer and price transparently in the fixed quote. The 3D design shows exactly how the pool sits in your grade before you commit.",
       },
     ],
-    nearby: ["el-dorado-hills", "rancho-cordova", "roseville"],
+    nearby: ["el-dorado-hills", "rancho-cordova", "roseville", "granite-bay"],
   },
   {
     slug: "roseville",
@@ -247,7 +247,7 @@ export const serviceAreas: ServiceArea[] = [
         a: "Absolutely. Artificial turf, drip-irrigated planting, and quality hardscape can reduce yard work to nearly nothing while keeping the space beautiful — a combination we've built for many active-adult homeowners.",
       },
     ],
-    nearby: ["citrus-heights", "folsom", "el-dorado-hills"],
+    nearby: ["citrus-heights", "folsom", "el-dorado-hills", "granite-bay"],
   },
   {
     slug: "rancho-cordova",
@@ -381,6 +381,60 @@ export const serviceAreas: ServiceArea[] = [
       },
     ],
     nearby: ["elk-grove", "rancho-cordova", "sacramento"],
+  },
+  {
+    slug: "granite-bay",
+    city: "Granite Bay",
+    state: "CA",
+    county: "Placer County",
+    blurb:
+      "Estate-scale pools and resort backyards for Granite Bay's large lots, mature oaks, and rolling grades.",
+    localIntro: [
+      "Granite Bay is where our clients tend to build the most ambitious backyards we do. Lots here are large, mature valley oaks are protected and beautiful, and the ground lives up to the name — decomposed granite and rock outcroppings are common, and they change how a pool has to be engineered and excavated. We plan for that from the first site visit rather than discovering it on dig day.",
+      "The design brief in Granite Bay is usually resort rather than suburban: a large freeform or geometric pool with a raised spa, generous travertine or paver decking, an outdoor kitchen, fire features, and lighting that makes the whole yard usable after dark. Because we self-perform pools, concrete, and landscape, we can design that entire yard as one project and build it in a single mobilization instead of coordinating three separate contractors around your oaks and your driveway.",
+    ],
+    neighborhoods: [
+      "Los Lagos",
+      "Granite Bay Hills",
+      "Treelake",
+      "Wexford",
+      "Clos du Lac",
+      "Douglas Ranch",
+      "Folsom Lake Estates",
+    ],
+    considerations: [
+      {
+        title: "Rock & Decomposed Granite",
+        text: "Excavation here regularly meets rock. We evaluate the likelihood during the site visit and price accordingly, so a hard dig doesn't become a surprise change order halfway through.",
+      },
+      {
+        title: "Protected Oak Trees",
+        text: "Placer County protects native oaks, and their root zones extend well past the canopy. We design pool and deck placement around drip lines and coordinate any required arborist review.",
+      },
+      {
+        title: "Large-Lot Drainage",
+        text: "Big lots on rolling grade move a lot of water in a storm. We engineer deck drainage, swales, and outfalls so the new hardscape improves the way the property sheds water rather than concentrating it.",
+      },
+      {
+        title: "Estate-Scale Scheduling",
+        text: "Projects at this scale often combine pool, decking, outdoor kitchen and landscape. Running them as one build under one contractor keeps the phases sequenced and the site manageable.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you handle rock excavation in Granite Bay?",
+        a: "Yes. Rock is common in this area and we plan for it — assessing conditions during the site visit, bringing the right equipment, and pricing the dig realistically rather than lowballing it and issuing a change order once the excavator is in your yard.",
+      },
+      {
+        q: "Can you build around my protected oak trees?",
+        a: "Yes, and we design for it deliberately. Oak root zones extend well beyond the canopy, so we position the pool, decking, and equipment to respect drip lines, and we coordinate arborist review where Placer County requires it.",
+      },
+      {
+        q: "Do you build outdoor kitchens and full outdoor living areas?",
+        a: "We do — outdoor kitchens, pergolas, fire features, seating walls, and lighting are among the most requested additions on Granite Bay projects, and we build them as part of the same project rather than subcontracting them out.",
+      },
+    ],
+    nearby: ["roseville", "folsom", "el-dorado-hills"],
   },
 ];
 

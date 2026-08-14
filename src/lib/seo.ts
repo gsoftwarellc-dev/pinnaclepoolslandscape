@@ -1,4 +1,5 @@
 import { business } from "@/data/business";
+import { serviceAreas } from "@/data/serviceAreas";
 
 export function absoluteUrl(path: string) {
   return new URL(path, business.url).toString();
@@ -21,16 +22,8 @@ export function localBusinessJsonLd() {
       postalCode: business.address.zip,
       addressCountry: "US",
     },
-    areaServed: [
-      "Elk Grove, CA",
-      "El Dorado Hills, CA",
-      "Sacramento, CA",
-      "Folsom, CA",
-      "Roseville, CA",
-      "Rancho Cordova, CA",
-      "Citrus Heights, CA",
-      "Wilton, CA",
-    ],
+    // Derived from the service-area data so adding a city keeps the schema in sync.
+    areaServed: serviceAreas.map((area) => `${area.city}, ${area.state}`),
     sameAs: [business.social.facebook, business.social.instagram, business.social.googleBusiness],
   };
 }

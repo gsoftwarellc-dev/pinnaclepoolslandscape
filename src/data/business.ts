@@ -6,6 +6,8 @@ export const business = {
   phone: "(916) 604-1700",
   phoneSecondary: "(615) 754-2937",
   phoneHref: "tel:+19166041700",
+  /** Tap-to-text target used by the mobile action bar and call/text CTA pairs. */
+  smsHref: "sms:+19166041700",
   email: "info@pinnaclepoolslandscape.com",
   address: {
     street: "9400 Foxford Ct",
@@ -41,6 +43,38 @@ export const business = {
     "On-time, on-budget project delivery",
   ],
 } as const;
+
+/**
+ * Credibility markers shown in the trust bar directly under the hero. Kept here so the
+ * same claims stay consistent everywhere they appear on the site.
+ */
+export const trustSignals = [
+  {
+    label: `CA License #${business.license}`,
+    detail: "Licensed & fully insured",
+    icon: "shield",
+  },
+  {
+    label: "20+ Years Experience",
+    detail: "Concrete & construction",
+    icon: "hammer",
+  },
+  {
+    label: "Family Owned",
+    detail: "Local, not a franchise",
+    icon: "home",
+  },
+  {
+    label: "Free 3D Design",
+    detail: "See it before we build it",
+    icon: "cube",
+  },
+  {
+    label: "Financing Available",
+    detail: "Terms up to 20 years",
+    icon: "card",
+  },
+] as const;
 
 export const testimonials = [
   {
