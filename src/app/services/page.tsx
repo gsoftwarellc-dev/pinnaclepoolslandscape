@@ -29,7 +29,7 @@ export default function ServicesPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/quote"
+                href="/estimate"
                 className="btn-tactile rounded-md bg-[#dac026] px-6 py-3 text-sm font-semibold text-black hover:bg-white"
               >
                 Get a Free Estimate

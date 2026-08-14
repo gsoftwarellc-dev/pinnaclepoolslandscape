@@ -2,10 +2,27 @@ import type { MetadataRoute } from "next";
 import { business } from "@/data/business";
 import { services } from "@/data/services";
 import { serviceAreas } from "@/data/serviceAreas";
+import { resources } from "@/data/resources";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/service-areas", "/gallery", "/financing", "/contact", "/quote"].map((path) => ({
+  const staticRoutes = [
+    "",
+    "/estimate",
+    "/schedule",
+    "/process",
+    "/services",
+    "/service-areas",
+    "/gallery",
+    "/resources",
+    "/financing",
+    "/contact",
+  ].map((path) => ({
     url: new URL(path, business.url).toString(),
+    lastModified: new Date(),
+  }));
+
+  const resourceRoutes = resources.map((r) => ({
+    url: new URL(`/resources/${r.slug}`, business.url).toString(),
     lastModified: new Date(),
   }));
 
@@ -26,5 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...staticRoutes, ...serviceRoutes, ...areaRoutes, ...areaServiceRoutes];
+  return [
+    ...staticRoutes,
+    ...resourceRoutes,
+    ...serviceRoutes,
+    ...areaRoutes,
+    ...areaServiceRoutes,
+  ];
 }

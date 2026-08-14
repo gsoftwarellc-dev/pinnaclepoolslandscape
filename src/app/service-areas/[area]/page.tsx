@@ -82,7 +82,7 @@ export default async function ServiceAreaPage({
             <p className="mt-2 text-sm text-neutral-500">{area.county}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/quote"
+                href="/estimate"
                 className="btn-glow rounded-sm px-6 py-3.5 text-sm font-semibold text-white"
                 style={{ ["--btn-glow-bg" as string]: "#000000" }}
               >

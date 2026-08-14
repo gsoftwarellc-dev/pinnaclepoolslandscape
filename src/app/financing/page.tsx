@@ -132,7 +132,7 @@ export default function FinancingPage() {
                 Click to Apply Online
               </a>
               <Link
-                href="/quote"
+                href="/estimate"
                 className="btn-tactile rounded-md border border-white/30 bg-transparent px-6 py-3 text-sm font-semibold text-white hover:border-[#dac026] hover:text-[#dac026]"
               >
                 Get a Quote Now

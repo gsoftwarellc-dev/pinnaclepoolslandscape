@@ -3,6 +3,7 @@ import Link from "next/link";
 import { business } from "@/data/business";
 import { services } from "@/data/services";
 import { serviceAreas } from "@/data/serviceAreas";
+import { resources } from "@/data/resources";
 
 export default function Footer() {
   return (
@@ -22,6 +23,20 @@ export default function Footer() {
             <br />
             {business.address.city}, {business.address.state} {business.address.zip}
           </p>
+          <div className="mt-3 flex w-full max-w-[16rem] gap-2">
+            <a
+              href={business.phoneHref}
+              className="flex-1 rounded-md bg-[#dac026] px-3 py-2.5 text-center text-sm font-bold text-black transition hover:bg-white"
+            >
+              Call
+            </a>
+            <a
+              href={business.smsHref}
+              className="flex-1 rounded-md border border-white/30 px-3 py-2.5 text-center text-sm font-bold text-white transition hover:border-[#dac026] hover:text-[#dac026]"
+            >
+              Text
+            </a>
+          </div>
           <a href={business.phoneHref} className="mt-2 block text-sm font-semibold text-white">
             {business.phone}
           </a>
@@ -90,11 +105,26 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="font-semibold text-white">Company</p>
+          <p className="font-semibold text-white">Get Started</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
+              <Link href="/estimate" className="font-semibold text-[#dac026] hover:text-white">
+                Free 3D Design &amp; Estimate
+              </Link>
+            </li>
+            <li>
+              <Link href="/schedule" className="hover:text-[#dac026]">
+                Schedule a Consultation
+              </Link>
+            </li>
+            <li>
+              <Link href="/process" className="hover:text-[#dac026]">
+                Our Process
+              </Link>
+            </li>
+            <li>
               <Link href="/gallery" className="hover:text-[#dac026]">
-                Gallery
+                Project Gallery
               </Link>
             </li>
             <li>
@@ -107,11 +137,17 @@ export default function Footer() {
                 Contact Us
               </Link>
             </li>
-            <li>
-              <Link href="/quote" className="hover:text-[#dac026]">
-                Get a Quote
-              </Link>
-            </li>
+          </ul>
+
+          <p className="mt-6 font-semibold text-white">Pool Buying Guides</p>
+          <ul className="mt-3 space-y-2 text-sm">
+            {resources.map((resource) => (
+              <li key={resource.slug}>
+                <Link href={`/resources/${resource.slug}`} className="hover:text-[#dac026]">
+                  {resource.shortTitle}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

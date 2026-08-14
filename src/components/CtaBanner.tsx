@@ -3,7 +3,7 @@ import { business } from "@/data/business";
 
 export default function CtaBanner({
   heading = "Ready to start your project?",
-  subheading = "We offer free estimates — no obligation, from a licensed local contractor.",
+  subheading = "Free 3D design and a free estimate — no obligation, from a licensed local contractor.",
 }: {
   heading?: string;
   subheading?: string;
@@ -15,18 +15,29 @@ export default function CtaBanner({
         <p className="max-w-xl text-neutral-300">{subheading}</p>
         <div className="mt-2 flex flex-wrap justify-center gap-3">
           <Link
-            href="/quote"
-            className="btn-glow rounded-sm px-6 py-3 text-sm font-semibold text-black"
+            href="/estimate"
+            className="btn-glow rounded-sm px-6 py-3.5 text-sm font-bold text-black"
             style={{ ["--btn-glow-bg" as string]: "#dac026" }}
           >
-            Get a Free Estimate
+            Start Your Free 3D Design
           </Link>
-          <a
-            href={business.phoneHref}
-            className="btn-tactile rounded-md border border-white bg-black px-6 py-3 text-sm font-semibold text-white hover:border-[#dac026] hover:text-[#dac026]"
+          <Link
+            href="/schedule"
+            className="btn-tactile rounded-md border border-white bg-black px-6 py-3.5 text-sm font-bold text-white transition hover:border-[#dac026] hover:text-[#dac026]"
           >
+            Book a Consultation
+          </Link>
+        </div>
+        <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-neutral-400">
+          <a href={business.phoneHref} className="font-semibold text-white hover:text-[#dac026]">
             Call {business.phone}
           </a>
+          <span aria-hidden>·</span>
+          <a href={business.smsHref} className="font-semibold text-white hover:text-[#dac026]">
+            Text Us
+          </a>
+          <span aria-hidden>·</span>
+          <span>CA Lic. #{business.license}</span>
         </div>
       </div>
     </section>

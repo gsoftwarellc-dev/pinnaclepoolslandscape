@@ -123,7 +123,7 @@ export default async function ServiceInAreaPage({
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/quote"
+                href="/estimate"
                 className="btn-glow rounded-sm px-6 py-3.5 text-sm font-semibold text-white"
                 style={{ ["--btn-glow-bg" as string]: "#000000" }}
               >
@@ -236,7 +236,7 @@ export default async function ServiceInAreaPage({
           </div>
           <div className="mt-10 text-center">
             <Link
-              href="/quote"
+              href="/estimate"
               className="btn-tactile inline-block rounded-md bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-[#dac026] hover:text-black"
             >
               Request Your Free {area.city} Estimate
