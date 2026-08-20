@@ -26,8 +26,8 @@ export default function QuickLeadForm({
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   const inputClass = dark
-    ? "w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-neutral-400 outline-none transition focus:border-[#dac026]"
-    : "w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-base text-black outline-none transition focus:border-[#dac026] focus:ring-2 focus:ring-[#dac026]/30";
+    ? "w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-neutral-400 outline-none transition focus:border-[#1668c4]"
+    : "w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-base text-black outline-none transition focus:border-[#1668c4] focus:ring-2 focus:ring-[#1668c4]/30";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -49,7 +49,7 @@ export default function QuickLeadForm({
     return (
       <div
         className={`rounded-xl p-6 ${
-          dark ? "border border-[#dac026]/40 bg-white/5 text-white" : "border border-[#dac026]/50 bg-[#fbf8e8] text-black"
+          dark ? "border border-[#1668c4]/40 bg-white/5 text-white" : "border border-[#1668c4]/50 bg-[#f2f7fd] text-black"
         }`}
       >
         <p className="text-lg font-bold">Thanks, {name.split(" ")[0] || "there"} — we&apos;ve got it.</p>
@@ -131,7 +131,7 @@ export default function QuickLeadForm({
       <button
         type="submit"
         disabled={status === "sending"}
-        className="btn-tactile w-full rounded-md bg-[#dac026] px-6 py-3.5 text-sm font-bold text-black transition hover:bg-black hover:text-white disabled:opacity-50"
+        className="btn-tactile w-full rounded-md bg-[#1668c4] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-black hover:text-white disabled:opacity-50"
       >
         {status === "sending" ? "Sending…" : "Request My Free Consultation"}
       </button>

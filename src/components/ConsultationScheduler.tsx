@@ -70,7 +70,7 @@ export default function ConsultationScheduler() {
     /\S+@\S+\.\S+/.test(email);
 
   const inputClass =
-    "w-full rounded-lg border border-neutral-300 px-4 py-3 text-base text-black outline-none transition focus:border-[#dac026] focus:ring-2 focus:ring-[#dac026]/30";
+    "w-full rounded-lg border border-neutral-300 px-4 py-3 text-base text-black outline-none transition focus:border-[#1668c4] focus:ring-2 focus:ring-[#1668c4]/30";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -100,8 +100,8 @@ export default function ConsultationScheduler() {
 
   if (status === "done") {
     return (
-      <div className="rounded-2xl border border-[#dac026]/50 bg-[#fbf8e8] p-8 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#dac026]">
+      <div className="rounded-2xl border border-[#1668c4]/50 bg-[#f2f7fd] p-8 text-center">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#1668c4]">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="3">
             <path d="M4 12l6 6L20 6" />
           </svg>
@@ -150,7 +150,7 @@ export default function ConsultationScheduler() {
                 >
                   <span
                     className={`block text-[0.7rem] font-semibold uppercase tracking-wider ${
-                      active ? "text-[#dac026]" : "text-neutral-500"
+                      active ? "text-[#1668c4]" : "text-neutral-500"
                     }`}
                   >
                     {d.weekday}
@@ -271,7 +271,7 @@ export default function ConsultationScheduler() {
         <button
           type="submit"
           disabled={!ready || status === "sending"}
-          className="btn-tactile w-full rounded-md bg-black px-6 py-4 text-sm font-bold text-white transition hover:bg-[#dac026] hover:text-black disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-black disabled:hover:text-white"
+          className="btn-tactile w-full rounded-md bg-black px-6 py-4 text-sm font-bold text-white transition hover:bg-[#1668c4] hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-black disabled:hover:text-white"
         >
           {status === "sending" ? "Sending…" : "Request This Appointment"}
         </button>

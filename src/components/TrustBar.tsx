@@ -26,8 +26,8 @@ export default function TrustBar({ dark = false }: { dark?: boolean }) {
             <svg
               viewBox="0 0 24 24"
               aria-hidden
-              className="mt-0.5 h-6 w-6 shrink-0 fill-[#8a7315]"
-              style={dark ? { fill: "#dac026" } : undefined}
+              className="mt-0.5 h-6 w-6 shrink-0 fill-[#0f4c92]"
+              style={dark ? { fill: "#1668c4" } : undefined}
             >
               <path d={paths[signal.icon]} />
             </svg>

@@ -85,7 +85,7 @@ export default async function ResourcePage({
       ))}
 
       <article>
-        <header className="border-b border-black/10 bg-[#faf6e0]">
+        <header className="border-b border-black/10 bg-[#eaf2fc]">
           <div className="mx-auto max-w-3xl px-4 py-12 sm:py-16">
             <nav aria-label="Breadcrumb" className="text-sm text-neutral-600">
               <Link href="/" className="hover:underline">
@@ -97,7 +97,7 @@ export default async function ResourcePage({
               </Link>{" "}
               / {resource.shortTitle}
             </nav>
-            <span className="mt-6 block text-xs font-semibold uppercase tracking-[0.16em] text-[#8a7315]">
+            <span className="mt-6 block text-xs font-semibold uppercase tracking-[0.16em] text-[#0f4c92]">
               {resource.category} · {resource.readTime}
             </span>
             <h1
@@ -133,7 +133,7 @@ export default async function ResourcePage({
                   <ul className="mt-5 space-y-3">
                     {section.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-3 leading-relaxed text-neutral-700">
-                        <span aria-hidden className="mt-1 shrink-0 font-bold text-[#8a7315]">
+                        <span aria-hidden className="mt-1 shrink-0 font-bold text-[#0f4c92]">
                           ✓
                         </span>
                         <span>{bullet}</span>
@@ -195,12 +195,12 @@ export default async function ResourcePage({
                     <Link
                       key={item.slug}
                       href={`/resources/${item.slug}`}
-                      className="group rounded-xl border border-neutral-200 p-4 transition hover:border-[#dac026]"
+                      className="group rounded-xl border border-neutral-200 p-4 transition hover:border-[#1668c4]"
                     >
                       <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
                         {item.readTime}
                       </span>
-                      <span className="mt-1.5 block text-sm font-bold leading-snug text-black group-hover:text-[#8a7315]">
+                      <span className="mt-1.5 block text-sm font-bold leading-snug text-black group-hover:text-[#0f4c92]">
                         {item.shortTitle}
                       </span>
                     </Link>
@@ -218,13 +218,13 @@ export default async function ResourcePage({
               </p>
               <Link
                 href="/estimate"
-                className="mt-4 block rounded-md bg-[#dac026] px-5 py-3 text-sm font-bold text-black transition hover:bg-white"
+                className="mt-4 block rounded-md bg-[#1668c4] px-5 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-[#0f4c92]"
               >
                 Build Your Pool →
               </Link>
               <a
                 href={business.phoneHref}
-                className="mt-2.5 block rounded-md border border-white/30 px-5 py-3 text-sm font-bold text-white transition hover:border-[#dac026] hover:text-[#dac026]"
+                className="mt-2.5 block rounded-md border border-white/30 px-5 py-3 text-sm font-bold text-white transition hover:border-[#1668c4] hover:text-[#1668c4]"
               >
                 Call {business.phone}
               </a>
@@ -237,7 +237,7 @@ export default async function ResourcePage({
                 </h2>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="mt-3 block text-lg font-bold text-black hover:text-[#8a7315]"
+                  className="mt-3 block text-lg font-bold text-black hover:text-[#0f4c92]"
                 >
                   {service.name} →
                 </Link>

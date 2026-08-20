@@ -59,7 +59,7 @@ export default function EstimatePage() {
         <div className="relative mx-auto max-w-6xl px-4 py-5 text-center sm:py-12">
           <span
             className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1 text-[0.7rem] font-bold uppercase tracking-[0.16em]"
-            style={{ borderColor: "rgba(218,192,38,0.45)", color: "#dac026" }}
+            style={{ borderColor: "rgba(218,192,38,0.45)", color: "#1668c4" }}
           >
             <Sparkles size={13} aria-hidden />
             Build Your Pool
@@ -98,20 +98,20 @@ export default function EstimatePage() {
                 <p className="text-sm text-neutral-400">Rather speak to someone?</p>
                 <a
                   href={business.phoneHref}
-                  className="mt-3 flex items-center justify-center gap-2 rounded-md bg-[#dac026] px-5 py-3.5 text-sm font-bold text-black transition hover:bg-white"
+                  className="mt-3 flex items-center justify-center gap-2 rounded-md bg-[#1668c4] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-white hover:text-[#0f4c92]"
                 >
                   <Phone size={16} aria-hidden />
                   {business.phone}
                 </a>
                 <a
                   href={business.smsHref}
-                  className="mt-2.5 block rounded-md border border-white/25 px-5 py-3 text-sm font-bold text-white transition hover:border-[#dac026] hover:text-[#dac026]"
+                  className="mt-2.5 block rounded-md border border-white/25 px-5 py-3 text-sm font-bold text-white transition hover:border-[#1668c4] hover:text-[#1668c4]"
                 >
                   Text Us
                 </a>
                 <Link
                   href="/schedule"
-                  className="mt-2.5 block rounded-md border border-white/25 px-5 py-3 text-sm font-bold text-white transition hover:border-[#dac026] hover:text-[#dac026]"
+                  className="mt-2.5 block rounded-md border border-white/25 px-5 py-3 text-sm font-bold text-white transition hover:border-[#1668c4] hover:text-[#1668c4]"
                 >
                   Book a Consultation
                 </Link>
@@ -126,7 +126,7 @@ export default function EstimatePage() {
               <ul className="mt-4 space-y-3">
                 {included.map((item) => (
                   <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-neutral-700">
-                    <span aria-hidden className="mt-0.5 shrink-0 font-bold text-[#8a7315]">
+                    <span aria-hidden className="mt-0.5 shrink-0 font-bold text-[#0f4c92]">
                       ✓
                     </span>
                     <span>{item}</span>
@@ -138,7 +138,7 @@ export default function EstimatePage() {
             <div className="rounded-2xl border border-neutral-200 bg-white p-6">
               <div className="mb-3 flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#dac026" aria-hidden>
+                  <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#1668c4" aria-hidden>
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 ))}
@@ -153,7 +153,7 @@ export default function EstimatePage() {
 
             <div className="rounded-2xl border border-neutral-200 bg-white p-6">
               <div className="flex items-center gap-2.5">
-                <ShieldCheck size={20} className="shrink-0 text-[#8a7315]" aria-hidden />
+                <ShieldCheck size={20} className="shrink-0 text-[#0f4c92]" aria-hidden />
                 <h2 className="text-base font-bold text-black">Licensed &amp; insured</h2>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-neutral-600">

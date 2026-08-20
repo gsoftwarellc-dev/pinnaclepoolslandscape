@@ -20,7 +20,7 @@ export default function GalleryGrid() {
             className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
               active === cat.slug
                 ? "border-black bg-black text-white"
-                : "border-slate-300 text-slate-700 hover:border-[#dac026] hover:text-[#8a7315]"
+                : "border-slate-300 text-slate-700 hover:border-[#1668c4] hover:text-[#0f4c92]"
             }`}
           >
             {cat.label}

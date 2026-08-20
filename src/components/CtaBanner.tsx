@@ -16,24 +16,24 @@ export default function CtaBanner({
         <div className="mt-2 flex flex-wrap justify-center gap-3">
           <Link
             href="/estimate"
-            className="btn-glow rounded-sm px-6 py-3.5 text-sm font-bold text-black"
-            style={{ ["--btn-glow-bg" as string]: "#dac026" }}
+            className="btn-glow rounded-sm px-6 py-3.5 text-sm font-bold text-white"
+            style={{ ["--btn-glow-bg" as string]: "#1668c4" }}
           >
             Start Your Free 3D Design
           </Link>
           <Link
             href="/schedule"
-            className="btn-tactile rounded-md border border-white bg-black px-6 py-3.5 text-sm font-bold text-white transition hover:border-[#dac026] hover:text-[#dac026]"
+            className="btn-tactile rounded-md border border-white bg-black px-6 py-3.5 text-sm font-bold text-white transition hover:border-[#1668c4] hover:text-[#1668c4]"
           >
             Book a Consultation
           </Link>
         </div>
         <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-neutral-400">
-          <a href={business.phoneHref} className="font-semibold text-white hover:text-[#dac026]">
+          <a href={business.phoneHref} className="font-semibold text-white hover:text-[#1668c4]">
             Call {business.phone}
           </a>
           <span aria-hidden>·</span>
-          <a href={business.smsHref} className="font-semibold text-white hover:text-[#dac026]">
+          <a href={business.smsHref} className="font-semibold text-white hover:text-[#1668c4]">
             Text Us
           </a>
           <span aria-hidden>·</span>

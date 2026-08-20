@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "How long does the whole pool building process take?",
-    a: "Plan on roughly four to seven months end to end. Design and proposal take two to three weeks, engineering and permitting run three to eight weeks depending on your city, and construction itself is typically eight to twelve weeks. Landscape and finishing work can add another one to three weeks.",
+    a: "It depends on the scope of your project, your city's permitting process, and the weather. Design and proposal come first, then engineering and permitting, then construction, and finally landscape and finishing work. We give you a realistic schedule in writing once the design is set, and we keep you updated as each phase moves.",
   },
   {
     q: "When do I have to make my final material selections?",
@@ -70,7 +70,7 @@ export default function ProcessPage() {
           sizes="100vw"
         />
         <div className="relative z-10 mx-auto max-w-4xl px-4 py-20 text-center sm:py-28">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#dac026]">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1668c4]">
             How We Build
           </span>
           <h1
@@ -87,14 +87,14 @@ export default function ProcessPage() {
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Link
               href="/estimate"
-              className="btn-glow rounded-sm px-7 py-4 text-sm font-semibold text-black"
-              style={{ ["--btn-glow-bg" as string]: "#dac026" }}
+              className="btn-glow rounded-sm px-7 py-4 text-sm font-semibold text-white"
+              style={{ ["--btn-glow-bg" as string]: "#1668c4" }}
             >
               Start Your Free 3D Design
             </Link>
             <a
               href={business.phoneHref}
-              className="btn-tactile rounded-md border border-white/40 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur transition hover:border-[#dac026]"
+              className="btn-tactile rounded-md border border-white/40 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur transition hover:border-[#1668c4]"
             >
               Call {business.phone}
             </a>
@@ -108,7 +108,7 @@ export default function ProcessPage() {
         <div className="relative">
           <div
             aria-hidden
-            className="absolute left-[1.35rem] top-3 hidden w-px bg-gradient-to-b from-[#dac026] via-neutral-300 to-transparent sm:block"
+            className="absolute left-[1.35rem] top-3 hidden w-px bg-gradient-to-b from-[#1668c4] via-neutral-300 to-transparent sm:block"
             style={{ height: "calc(100% - 3rem)" }}
           />
 
@@ -116,7 +116,7 @@ export default function ProcessPage() {
             {processPhases.map((phase, i) => (
               <Reveal key={phase.number} delay={i * 40}>
                 <li className="relative sm:pl-16">
-                  <div className="absolute left-0 top-0 hidden h-11 w-11 items-center justify-center rounded-full border-2 border-[#dac026] bg-white text-sm font-bold text-black sm:flex">
+                  <div className="absolute left-0 top-0 hidden h-11 w-11 items-center justify-center rounded-full border-2 border-[#1668c4] bg-white text-sm font-bold text-black sm:flex">
                     {phase.number}
                   </div>
 
@@ -125,9 +125,6 @@ export default function ProcessPage() {
                       {phase.number}
                     </span>
                     <h2 className="text-2xl font-bold tracking-tight text-black">{phase.title}</h2>
-                    <span className="rounded-full bg-[#fbf8e8] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#8a7315]">
-                      {phase.duration}
-                    </span>
                   </div>
 
                   <p className="mt-3 text-lg leading-relaxed text-neutral-700">{phase.summary}</p>
@@ -135,7 +132,7 @@ export default function ProcessPage() {
                   <ul className="mt-5 space-y-2.5">
                     {phase.details.map((detail) => (
                       <li key={detail} className="flex gap-3 text-neutral-600">
-                        <span aria-hidden className="mt-0.5 shrink-0 font-bold text-[#8a7315]">
+                        <span aria-hidden className="mt-0.5 shrink-0 font-bold text-[#0f4c92]">
                           ✓
                         </span>
                         <span>{detail}</span>
@@ -143,7 +140,7 @@ export default function ProcessPage() {
                     ))}
                   </ul>
 
-                  <p className="mt-5 rounded-lg border-l-[3px] border-[#dac026] bg-neutral-50 px-4 py-3 text-sm leading-relaxed text-neutral-700">
+                  <p className="mt-5 rounded-lg border-l-[3px] border-[#1668c4] bg-neutral-50 px-4 py-3 text-sm leading-relaxed text-neutral-700">
                     <strong className="font-bold text-black">Your part:</strong> {phase.yourPart}
                   </p>
                 </li>
@@ -156,7 +153,7 @@ export default function ProcessPage() {
       <section className="bg-neutral-50 py-16 sm:py-20">
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 lg:grid-cols-2">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4c92]">
               Ready When You Are
             </span>
             <h2
@@ -172,13 +169,13 @@ export default function ProcessPage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/estimate"
-                className="btn-tactile rounded-md bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#dac026] hover:text-black"
+                className="btn-tactile rounded-md bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#1668c4] hover:text-white"
               >
                 Get an Instant Estimate
               </Link>
               <Link
                 href="/schedule"
-                className="btn-tactile rounded-md border border-black/15 px-6 py-3 text-sm font-semibold text-black transition hover:border-[#dac026]"
+                className="btn-tactile rounded-md border border-black/15 px-6 py-3 text-sm font-semibold text-black transition hover:border-[#1668c4]"
               >
                 Schedule a Consultation
               </Link>

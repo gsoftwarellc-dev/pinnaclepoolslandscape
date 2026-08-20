@@ -9,6 +9,8 @@ type Project = {
   alt: string;
   /** Tailwind span classes controlling this tile's footprint in the mosaic. */
   span: string;
+  /** Full class string for the tag label, written out for Tailwind's scanner. */
+  tagClass?: string;
 };
 
 /**
@@ -22,6 +24,7 @@ const projects: Project[] = [
     tag: "Pool + Outdoor Living",
     alt: "Modern rectangular pool with sun shelf and covered cabana",
     span: "sm:col-span-2 sm:row-span-2",
+    tagClass: "text-[#dac026]",
   },
   {
     src: "/new/pool-raised-spa-tile-waterfall.jpg",
@@ -36,6 +39,7 @@ const projects: Project[] = [
     tag: "Pool, Turf & Fire",
     alt: "Backyard with pool, spa, artificial turf and fire pit",
     span: "",
+    tagClass: "text-[#dac026]",
   },
   {
     src: "/new/pool-water-feature-turf-deck.jpeg",
@@ -58,7 +62,7 @@ export default function FeaturedProjects() {
     <section className="mx-auto max-w-6xl px-4 py-20 sm:py-28">
       <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-6">
         <div className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4c92]">
             Recent Work
           </span>
           <h2
@@ -74,7 +78,7 @@ export default function FeaturedProjects() {
         </div>
         <Link
           href="/gallery"
-          className="btn-tactile shrink-0 rounded-md border border-black/15 px-6 py-3 text-sm font-semibold text-black transition hover:border-[#dac026]"
+          className="btn-tactile shrink-0 rounded-md border border-black/15 px-6 py-3 text-sm font-semibold text-black transition hover:border-[#1668c4]"
         >
           View Full Gallery →
         </Link>
@@ -85,7 +89,7 @@ export default function FeaturedProjects() {
           <Reveal key={project.src} delay={i * 70} className={project.span}>
             <Link
               href="/gallery"
-              className="group relative block h-full min-h-[13rem] overflow-hidden rounded-2xl"
+              className="group relative block h-full min-h-[13rem] overflow-hidden rounded-2xl sm:min-h-0"
             >
               <Image
                 src={project.src}
@@ -96,7 +100,11 @@ export default function FeaturedProjects() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-5">
-                <span className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-[#dac026]">
+                <span
+                  className={`text-[0.7rem] font-bold uppercase tracking-[0.14em] ${
+                    project.tagClass ?? "text-[#4a9eea]"
+                  }`}
+                >
                   {project.tag}
                 </span>
                 <h3 className="mt-1 text-lg font-bold leading-tight text-white">{project.title}</h3>

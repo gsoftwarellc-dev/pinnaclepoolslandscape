@@ -542,7 +542,7 @@ export const resources: Resource[] = [
         bullets: [
           "Confirm the license is active and in the right classification",
           "Confirm general liability insurance and workers' compensation are current",
-          "Ask whether the crews are employees or subcontractors, and whether the subs are licensed too",
+          "Ask who will actually be on site, and confirm everyone working on your project is licensed",
           "Check that the business name on the license matches the name on your contract",
         ],
       },
@@ -605,7 +605,7 @@ export const resources: Resource[] = [
         ],
         bullets: [
           "What is your license number, and how long have you held it?",
-          "Who actually performs the work — employees or subcontractors?",
+          "Who will actually be performing the work on my project?",
           "Who will be my single point of contact, and how often will I hear from them?",
           "What is your realistic timeline, including permitting, for my city?",
           "What happens if you hit rock or groundwater during excavation?",

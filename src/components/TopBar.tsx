@@ -3,7 +3,7 @@ import { business } from "@/data/business";
 export default function TopBar() {
   return (
     <div className="bg-red-600 text-sm text-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 overflow-hidden px-4 py-2.5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 overflow-hidden px-4 pb-1 pt-2.5 md:py-2.5">
         <a
           href={business.phoneHref}
           className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap hover:opacity-80 sm:flex"
@@ -21,6 +21,11 @@ export default function TopBar() {
         <span className="hidden shrink-0 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-bold text-red-600 md:inline-block">
           We Offer Free Estimates
         </span>
+      </div>
+
+      {/* Second line on small screens only — the pill above covers this from md up. */}
+      <div className="px-4 pb-2 text-center text-xs font-semibold md:hidden">
+        Free Estimate Available
       </div>
     </div>
   );

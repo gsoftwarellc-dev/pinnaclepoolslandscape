@@ -5,6 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-dark: var(--brand-gold-dark);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
@@ -81,7 +85,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--btn-glow-bg, #dac026);
+  background: var(--btn-glow-bg, #1668c4);
   border: 1px solid rgba(43, 130, 245, 0.45);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.45) inset,
@@ -224,8 +228,8 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.789 0.15 92);
-  --primary-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.52 0.17 255);
+  --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -235,13 +239,18 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.789 0.15 92);
+  --ring: oklch(0.52 0.17 255);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
+  /* Brand accents: blue leads (pools/CTAs), gold supports (landscape). */
+  --brand-blue: #1668c4;
+  --brand-blue-dark: #0f4c92;
+  --brand-gold: #dac026;
+  --brand-gold-dark: #8a7315;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
