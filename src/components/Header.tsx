@@ -39,11 +39,11 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center gap-5 whitespace-nowrap text-[0.95rem] font-semibold text-black xl:flex 2xl:gap-7 2xl:text-base">
-          <Link href="/" className="py-2 hover:text-[#8a7315]">
+          <Link href="/" className="py-2 hover:text-[#0f4c92]">
             Home
           </Link>
           <div className="group relative">
-            <Link href="/services" className="flex items-center gap-1 py-2 hover:text-[#8a7315]">
+            <Link href="/services" className="flex items-center gap-1 py-2 hover:text-[#0f4c92]">
               Services
             </Link>
             <div className="invisible absolute left-0 top-full w-64 rounded-lg border border-black/10 bg-white p-2 text-sm font-medium opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
@@ -61,7 +61,7 @@ export default function Header() {
           <div className="group relative">
             <Link
               href="/service-areas"
-              className="flex items-center gap-1 py-2 hover:text-[#8a7315]"
+              className="flex items-center gap-1 py-2 hover:text-[#0f4c92]"
             >
               Areas
             </Link>
@@ -77,17 +77,20 @@ export default function Header() {
               ))}
             </div>
           </div>
-          <Link href="/gallery" className="py-2 hover:text-[#8a7315]">
+          <Link href="/gallery" className="py-2 hover:text-[#0f4c92]">
             Gallery
           </Link>
-          <Link href="/process" className="py-2 hover:text-[#8a7315]">
+          <Link href="/process" className="py-2 hover:text-[#0f4c92]">
             Process
           </Link>
-          <Link href="/resources" className="py-2 hover:text-[#8a7315]">
+          <Link href="/resources" className="py-2 hover:text-[#0f4c92]">
             Guides
           </Link>
-          <Link href="/financing" className="py-2 hover:text-[#8a7315]">
+          <Link href="/financing" className="py-2 hover:text-[#0f4c92]">
             Financing
+          </Link>
+          <Link href="/contact" className="py-2 hover:text-[#0f4c92]">
+            Contact
           </Link>
         </nav>
 
@@ -100,7 +103,7 @@ export default function Header() {
           </a>
           <Link
             href="/estimate"
-            className="hidden whitespace-nowrap rounded-md bg-black px-4 py-2.5 text-[0.95rem] font-semibold text-white hover:bg-[#dac026] hover:text-black sm:block xl:px-5 2xl:text-base"
+            className="hidden whitespace-nowrap rounded-md bg-[#1668c4] px-4 py-2.5 text-[0.95rem] font-semibold text-white transition hover:bg-[#0f4c92] sm:block xl:px-5 2xl:text-base"
           >
             Free 3D Design
           </Link>
@@ -201,11 +204,11 @@ export default function Header() {
             <Link href="/financing" className="rounded-md px-2 py-3 hover:bg-slate-50">
               Financing
             </Link>
-            <Link href="/schedule" className="rounded-md px-2 py-3 hover:bg-slate-50">
-              Schedule a Consultation
-            </Link>
             <Link href="/contact" className="rounded-md px-2 py-3 hover:bg-slate-50">
               Contact
+            </Link>
+            <Link href="/schedule" className="rounded-md px-2 py-3 hover:bg-slate-50">
+              Schedule a Consultation
             </Link>
 
             <div className="mt-3 flex flex-col gap-3 border-t border-black/10 pt-4">
@@ -225,7 +228,7 @@ export default function Header() {
               </div>
               <Link
                 href="/estimate"
-                className="rounded-md bg-[#dac026] px-4 py-3 text-center font-bold text-black"
+                className="rounded-md bg-[#1668c4] px-4 py-3 text-center font-bold text-white"
               >
                 Start Your Free 3D Design
               </Link>

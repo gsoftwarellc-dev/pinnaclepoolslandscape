@@ -49,7 +49,7 @@ import {
   type Option,
 } from "@/data/estimator";
 
-const GOLD = "#dac026";
+const GOLD = "#1668c4";
 
 const icons: Record<string, LucideIcon> = {
   Sun,
@@ -154,7 +154,7 @@ function StepRail({ steps, current }: { steps: Step[]; current: number }) {
         <span className="text-xs font-bold uppercase tracking-[0.16em] text-neutral-500">
           Step {current + 1} of {steps.length}
         </span>
-        <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a7315]">
+        <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#0f4c92]">
           {pct}% complete
         </span>
       </div>
@@ -172,7 +172,7 @@ function StepRail({ steps, current }: { steps: Step[]; current: number }) {
               style={{
                 width: i <= current ? "100%" : "0%",
                 background:
-                  i === current ? `linear-gradient(90deg, #8a7315, ${GOLD})` : "#8a7315",
+                  i === current ? `linear-gradient(90deg, #0f4c92, ${GOLD})` : "#0f4c92",
               }}
             />
           </div>
@@ -190,7 +190,7 @@ function StepRail({ steps, current }: { steps: Step[]; current: number }) {
                 active
                   ? "bg-black text-white"
                   : done
-                    ? "text-[#8a7315]"
+                    ? "text-[#0f4c92]"
                     : "text-neutral-400"
               }`}
             >
@@ -221,7 +221,7 @@ function Check({ selected, round = false }: { selected: boolean; round?: boolean
   );
 }
 
-const selectedRing = "border-transparent bg-[#fdfbef] shadow-[0_0_0_2.5px_#dac026]";
+const selectedRing = "border-transparent bg-[#f5f9fe] shadow-[0_0_0_2.5px_#1668c4]";
 const idleRing = "border-neutral-200 bg-white hover:border-neutral-400 hover:shadow-md";
 
 /** Large photo card — used where seeing the thing matters more than reading about it. */
@@ -308,7 +308,7 @@ function SizeCard({
               className="block h-full rounded-full transition-all duration-300"
               style={{
                 width: `${option.scale * 100}%`,
-                background: `linear-gradient(90deg, #8a7315, ${GOLD})`,
+                background: `linear-gradient(90deg, #0f4c92, ${GOLD})`,
               }}
             />
           ) : (
@@ -425,7 +425,7 @@ function Field({
       <input
         id={id}
         name={id}
-        className="rounded-lg border border-neutral-300 px-4 py-3.5 text-base text-black outline-none transition focus:border-[#dac026] focus:ring-2 focus:ring-[#dac026]/30"
+        className="rounded-lg border border-neutral-300 px-4 py-3.5 text-base text-black outline-none transition focus:border-[#1668c4] focus:ring-2 focus:ring-[#1668c4]/30"
         {...props}
       />
     </div>
@@ -541,7 +541,7 @@ function ResultScreen({ answers }: { answers: EstimateAnswers }) {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="/schedule"
-              className="btn-glow rounded-sm px-7 py-3.5 text-sm font-bold text-black"
+              className="btn-glow rounded-sm px-7 py-3.5 text-sm font-bold text-white"
               style={{ ["--btn-glow-bg" as string]: GOLD }}
             >
               <Calendar size={16} className="mr-2" aria-hidden />
@@ -549,7 +549,7 @@ function ResultScreen({ answers }: { answers: EstimateAnswers }) {
             </Link>
             <a
               href={business.phoneHref}
-              className="btn-tactile rounded-md border border-white/40 px-7 py-3.5 text-sm font-bold text-white transition hover:border-[#dac026] hover:text-[#dac026]"
+              className="btn-tactile rounded-md border border-white/40 px-7 py-3.5 text-sm font-bold text-white transition hover:border-[#1668c4] hover:text-[#1668c4]"
             >
               <Phone size={16} className="mr-2" aria-hidden />
               {business.phone}
@@ -561,7 +561,7 @@ function ResultScreen({ answers }: { answers: EstimateAnswers }) {
           {wantsFinancing && (
             <Link
               href="/financing"
-              className="rounded-xl border border-neutral-200 p-4 transition hover:border-[#dac026]"
+              className="rounded-xl border border-neutral-200 p-4 transition hover:border-[#1668c4]"
             >
               <span className="block text-sm font-bold text-black">
                 Explore financing options →
@@ -573,7 +573,7 @@ function ResultScreen({ answers }: { answers: EstimateAnswers }) {
           )}
           <Link
             href="/process"
-            className="rounded-xl border border-neutral-200 p-4 transition hover:border-[#dac026]"
+            className="rounded-xl border border-neutral-200 p-4 transition hover:border-[#1668c4]"
           >
             <span className="block text-sm font-bold text-black">See our build process →</span>
             <span className="mt-1 block text-sm text-neutral-500">
@@ -582,7 +582,7 @@ function ResultScreen({ answers }: { answers: EstimateAnswers }) {
           </Link>
           <Link
             href="/gallery"
-            className="rounded-xl border border-neutral-200 p-4 transition hover:border-[#dac026]"
+            className="rounded-xl border border-neutral-200 p-4 transition hover:border-[#1668c4]"
           >
             <span className="block text-sm font-bold text-black">Browse completed projects →</span>
             <span className="mt-1 block text-sm text-neutral-500">
@@ -908,7 +908,7 @@ export default function EstimateWizard() {
               />
               <div className="sm:col-span-2">
                 <div className="flex gap-3 rounded-xl border border-neutral-200 bg-neutral-50 p-4">
-                  <Lock size={17} className="mt-0.5 shrink-0 text-[#8a7315]" aria-hidden />
+                  <Lock size={17} className="mt-0.5 shrink-0 text-[#0f4c92]" aria-hidden />
                   <p className="text-sm leading-relaxed text-neutral-600">
                     We never sell or share your details. They&apos;re used only to prepare your
                     estimate and schedule a consultation — no spam, no obligation.
@@ -936,7 +936,7 @@ export default function EstimateWizard() {
             type="button"
             onClick={handleSubmit}
             disabled={!canContinue || sending}
-            className="btn-tactile inline-flex items-center gap-2 rounded-md bg-black px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#dac026] hover:text-black disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-black disabled:hover:text-white"
+            className="btn-tactile inline-flex items-center gap-2 rounded-md bg-black px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#1668c4] hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-black disabled:hover:text-white"
           >
             {sending ? "Sending…" : "Reveal My Estimate"}
             {!sending && <ArrowRight size={16} aria-hidden />}
@@ -946,7 +946,7 @@ export default function EstimateWizard() {
             type="button"
             onClick={() => setIndex((i) => Math.min(i + 1, steps.length - 1))}
             disabled={!canContinue}
-            className="btn-tactile inline-flex items-center gap-2 rounded-md bg-black px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#dac026] hover:text-black disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-black disabled:hover:text-white"
+            className="btn-tactile inline-flex items-center gap-2 rounded-md bg-black px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#1668c4] hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-black disabled:hover:text-white"
           >
             Continue
             <ArrowRight size={16} aria-hidden />

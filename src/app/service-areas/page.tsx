@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ServiceAreasPage() {
   return (
     <>
-      <section className="flex min-h-[70svh] items-center bg-[#faf6e0]">
+      <section className="flex min-h-[70svh] items-center bg-[#eaf2fc]">
         <div className="mx-auto w-full max-w-4xl px-4 py-16 text-center">
           <h1 className="text-4xl font-bold text-slate-900">Areas We Serve</h1>
           <p className="mt-4 text-lg text-slate-700">
@@ -29,7 +29,7 @@ export default function ServiceAreasPage() {
             <Link
               key={area.slug}
               href={`/service-areas/${area.slug}`}
-              className="rounded-xl border border-black/10 p-6 hover:border-[#dac026] hover:shadow-md"
+              className="rounded-xl border border-black/10 p-6 hover:border-[#1668c4] hover:shadow-md"
             >
               <h2 className="text-lg font-semibold text-slate-900">
                 {area.city}, {area.state}

@@ -1,7 +1,6 @@
 export type ProcessPhase = {
   number: string;
   title: string;
-  duration: string;
   summary: string;
   details: string[];
   /** What the homeowner is responsible for during this phase. */
@@ -10,14 +9,12 @@ export type ProcessPhase = {
 
 /**
  * The full design-and-build sequence, written so a homeowner who has never built a pool
- * can follow it. Durations are typical for our Sacramento-region projects and are stated
- * as ranges because permitting and weather move real schedules.
+ * can follow it.
  */
 export const processPhases: ProcessPhase[] = [
   {
     number: "01",
     title: "Free Consultation",
-    duration: "Week 1",
     summary:
       "We come to your home, walk the yard, and talk through how you actually want to use the space.",
     details: [
@@ -32,7 +29,6 @@ export const processPhases: ProcessPhase[] = [
   {
     number: "02",
     title: "Custom 3D Design",
-    duration: "Week 1–2",
     summary:
       "Your designer builds a photorealistic 3D model of the pool and backyard on your actual lot.",
     details: [
@@ -47,7 +43,6 @@ export const processPhases: ProcessPhase[] = [
   {
     number: "03",
     title: "Proposal & Agreement",
-    duration: "Week 2–3",
     summary:
       "You receive a fixed, itemized proposal tied to the design you approved — no vague allowances.",
     details: [
@@ -62,7 +57,6 @@ export const processPhases: ProcessPhase[] = [
   {
     number: "04",
     title: "Engineering & Permits",
-    duration: "3–8 weeks",
     summary:
       "We produce engineered plans for your soil and grade, then take them through your city or county.",
     details: [
@@ -77,7 +71,6 @@ export const processPhases: ProcessPhase[] = [
   {
     number: "05",
     title: "Layout & Excavation",
-    duration: "2–4 days",
     summary: "The pool is chalked out on the ground, you approve the position, then we dig.",
     details: [
       "Layout painted on the dirt so you can stand in the shape before a shovel moves",
@@ -91,7 +84,6 @@ export const processPhases: ProcessPhase[] = [
   {
     number: "06",
     title: "Steel, Plumbing & Electrical",
-    duration: "1–2 weeks",
     summary:
       "The structural skeleton and every line that has to be buried before concrete goes in.",
     details: [
@@ -106,7 +98,6 @@ export const processPhases: ProcessPhase[] = [
   {
     number: "07",
     title: "Gunite Shell",
-    duration: "1 day + 7–10 days cure",
     summary:
       "Concrete is pneumatically applied over the steel, forming the monolithic shell of your pool.",
     details: [
@@ -121,7 +112,6 @@ export const processPhases: ProcessPhase[] = [
   {
     number: "08",
     title: "Tile, Coping & Decking",
-    duration: "2–3 weeks",
     summary: "The pool starts looking like the rendering — waterline tile, coping, and deck.",
     details: [
       "Waterline tile and any raised-wall or spa tile set",
@@ -135,7 +125,6 @@ export const processPhases: ProcessPhase[] = [
   {
     number: "09",
     title: "Plaster, Fill & Startup",
-    duration: "3–5 days",
     summary: "Interior finish goes on, the pool is filled, and the water chemistry is dialed in.",
     details: [
       "Interior finish applied — plaster, quartz, or pebble depending on your selection",
@@ -149,7 +138,6 @@ export const processPhases: ProcessPhase[] = [
   {
     number: "10",
     title: "Landscape & Handoff",
-    duration: "1–3 weeks",
     summary:
       "Turf, planting, lighting, and fencing complete the yard — then we hand you the keys.",
     details: [

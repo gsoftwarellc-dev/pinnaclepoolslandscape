@@ -62,7 +62,7 @@ export default async function ServiceAreaPage({
       ))}
 
       {/* Hero */}
-      <section className="flex min-h-[70svh] items-center bg-[#faf6e0]">
+      <section className="flex min-h-[70svh] items-center bg-[#eaf2fc]">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-14 lg:grid-cols-2 lg:py-20">
           <div>
             <nav aria-label="Breadcrumb" className="text-sm text-neutral-500">
@@ -90,7 +90,7 @@ export default async function ServiceAreaPage({
               </Link>
               <a
                 href={business.phoneHref}
-                className="btn-tactile rounded-md border border-neutral-300 bg-white px-6 py-3.5 text-sm font-semibold text-black hover:border-[#dac026]"
+                className="btn-tactile rounded-md border border-neutral-300 bg-white px-6 py-3.5 text-sm font-semibold text-black hover:border-[#1668c4]"
               >
                 Call {business.phone}
               </a>
@@ -134,13 +134,13 @@ export default async function ServiceAreaPage({
               <Link
                 key={service.slug}
                 href={`/service-areas/${area.slug}/${service.slug}`}
-                className="rounded-xl border border-neutral-200 bg-white p-5 transition hover:border-[#dac026] hover:shadow-md"
+                className="rounded-xl border border-neutral-200 bg-white p-5 transition hover:border-[#1668c4] hover:shadow-md"
               >
                 <h3 className="font-semibold text-black">
                   {service.shortName} in {area.city}
                 </h3>
                 <p className="mt-2 text-sm text-neutral-600">{service.summary}</p>
-                <span className="mt-3 inline-block text-sm font-semibold text-[#8a7315]">
+                <span className="mt-3 inline-block text-sm font-semibold text-[#0f4c92]">
                   Local details →
                 </span>
               </Link>
@@ -221,7 +221,7 @@ export default async function ServiceAreaPage({
               <Link
                 key={n.slug}
                 href={`/service-areas/${n.slug}`}
-                className="rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 transition hover:border-[#dac026] hover:text-[#8a7315]"
+                className="rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 transition hover:border-[#1668c4] hover:text-[#0f4c92]"
               >
                 {n.city}, {n.state}
               </Link>

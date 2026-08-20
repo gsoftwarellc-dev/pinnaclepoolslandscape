@@ -66,7 +66,7 @@ export default async function ServicePage({
       ))}
 
       {/* Hero */}
-      <section className="flex min-h-[70svh] items-center bg-[#faf6e0]">
+      <section className="flex min-h-[70svh] items-center bg-[#eaf2fc]">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-14 lg:grid-cols-2 lg:py-20">
           <div>
             <nav aria-label="Breadcrumb" className="text-sm text-neutral-500">
@@ -93,7 +93,7 @@ export default async function ServicePage({
               </Link>
               <a
                 href={business.phoneHref}
-                className="btn-tactile rounded-md border border-neutral-300 bg-white px-6 py-3.5 text-sm font-semibold text-black hover:border-[#dac026]"
+                className="btn-tactile rounded-md border border-neutral-300 bg-white px-6 py-3.5 text-sm font-semibold text-black hover:border-[#1668c4]"
               >
                 Call {business.phone}
               </a>
@@ -151,7 +151,7 @@ export default async function ServicePage({
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {service.process.map((step, i) => (
             <div key={step.title} className="relative rounded-xl border border-neutral-200 p-6">
-              <span className="text-3xl font-bold text-[#dac026]">{i + 1}</span>
+              <span className="text-3xl font-bold text-[#1668c4]">{i + 1}</span>
               <h3 className="mt-2 font-semibold text-black">{step.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-600">{step.text}</p>
             </div>
@@ -160,7 +160,7 @@ export default async function ServicePage({
         <div className="mt-10 text-center">
           <Link
             href="/estimate"
-            className="btn-tactile inline-block rounded-md bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-[#dac026] hover:text-black"
+            className="btn-tactile inline-block rounded-md bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-[#1668c4] hover:text-white"
           >
             Start With a Free Estimate
           </Link>
@@ -175,7 +175,7 @@ export default async function ServicePage({
             <ul className="mt-5 grid gap-3">
               {service.bullets.map((b) => (
                 <li key={b} className="flex items-start gap-2 text-neutral-700">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#dac026]" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1668c4]" />
                   {b}
                 </li>
               ))}
@@ -205,7 +205,7 @@ export default async function ServicePage({
         <p className="mt-3 max-w-2xl text-neutral-600">
           We provide {service.shortName.toLowerCase()} services throughout the greater Sacramento
           region. Choose your city for local details, or{" "}
-          <Link href="/service-areas" className="font-semibold text-[#8a7315] hover:underline">
+          <Link href="/service-areas" className="font-semibold text-[#0f4c92] hover:underline">
             view all areas we serve
           </Link>
           .
@@ -215,7 +215,7 @@ export default async function ServicePage({
             <Link
               key={area.slug}
               href={`/service-areas/${area.slug}/${service.slug}`}
-              className="rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 transition hover:border-[#dac026] hover:text-[#8a7315]"
+              className="rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 transition hover:border-[#1668c4] hover:text-[#0f4c92]"
             >
               {service.shortName} in {area.city}, {area.state}
             </Link>
@@ -233,11 +233,11 @@ export default async function ServicePage({
                 <Link
                   key={r.slug}
                   href={`/services/${r.slug}`}
-                  className="rounded-xl border border-neutral-200 bg-white p-5 transition hover:border-[#dac026] hover:shadow-md"
+                  className="rounded-xl border border-neutral-200 bg-white p-5 transition hover:border-[#1668c4] hover:shadow-md"
                 >
                   <h3 className="font-semibold text-black">{r.name}</h3>
                   <p className="mt-2 text-sm text-neutral-600">{r.summary}</p>
-                  <span className="mt-3 inline-block text-sm font-semibold text-[#8a7315]">
+                  <span className="mt-3 inline-block text-sm font-semibold text-[#0f4c92]">
                     Learn more →
                   </span>
                 </Link>

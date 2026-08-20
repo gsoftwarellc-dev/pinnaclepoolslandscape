@@ -110,7 +110,7 @@ export default function FinancingPage() {
       <section className="flex min-h-[70svh] items-center bg-black">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:py-20">
           <div>
-            <Badge className="bg-[#dac026] text-black hover:bg-[#dac026]">
+            <Badge className="bg-[#1668c4] text-white hover:bg-[#1668c4]">
               Quick &amp; Easy Approval
             </Badge>
             <h1 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
@@ -127,13 +127,13 @@ export default function FinancingPage() {
                 href={lyon.applyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-tactile rounded-md bg-[#dac026] px-6 py-3 text-sm font-semibold text-black hover:bg-white"
+                className="btn-tactile rounded-md bg-[#1668c4] px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-[#0f4c92]"
               >
                 Click to Apply Online
               </a>
               <Link
                 href="/estimate"
-                className="btn-tactile rounded-md border border-white/30 bg-transparent px-6 py-3 text-sm font-semibold text-white hover:border-[#dac026] hover:text-[#dac026]"
+                className="btn-tactile rounded-md border border-white/30 bg-transparent px-6 py-3 text-sm font-semibold text-white hover:border-[#1668c4] hover:text-[#1668c4]"
               >
                 Get a Quote Now
               </Link>
@@ -199,13 +199,13 @@ export default function FinancingPage() {
               href={lyon.applyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-tactile rounded-md bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-[#dac026] hover:text-black"
+              className="btn-tactile rounded-md bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-[#1668c4] hover:text-white"
             >
               Click to Apply Online
             </a>
             <a
               href={business.phoneHref}
-              className="btn-tactile rounded-md border border-black/15 px-6 py-3 text-sm font-semibold text-black hover:border-[#dac026]"
+              className="btn-tactile rounded-md border border-black/15 px-6 py-3 text-sm font-semibold text-black hover:border-[#1668c4]"
             >
               Call {business.phone}
             </a>
@@ -228,7 +228,7 @@ export default function FinancingPage() {
             Our providers offer pool loans with little or no equity, and very competitive rates
             for your unique situation. Feel free to contact our loan company directly, or call us
             at{" "}
-            <a href={business.phoneHref} className="font-semibold text-[#8a7315]">
+            <a href={business.phoneHref} className="font-semibold text-[#0f4c92]">
               {business.phone}
             </a>{" "}
             if you have questions or need advice.
@@ -237,7 +237,7 @@ export default function FinancingPage() {
 
         <div className="mt-10 grid gap-8 rounded-2xl border border-neutral-200 p-6 sm:p-8 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-[#8a7315]">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#0f4c92]">
               Our Lending Partner
             </p>
             <h3 className="mt-2 text-2xl font-bold text-black">{lyon.name}</h3>
@@ -254,7 +254,7 @@ export default function FinancingPage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={lyon.phoneHref}
-                className="btn-tactile rounded-md border border-black/15 px-5 py-3 text-sm font-semibold text-black hover:border-[#dac026]"
+                className="btn-tactile rounded-md border border-black/15 px-5 py-3 text-sm font-semibold text-black hover:border-[#1668c4]"
               >
                 Call {lyon.name} at {lyon.phone}
               </a>
@@ -262,7 +262,7 @@ export default function FinancingPage() {
                 href={lyon.applyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-tactile rounded-md bg-black px-5 py-3 text-sm font-semibold text-white hover:bg-[#dac026] hover:text-black"
+                className="btn-tactile rounded-md bg-black px-5 py-3 text-sm font-semibold text-white hover:bg-[#1668c4] hover:text-white"
               >
                 Click to Apply Online
               </a>
@@ -274,7 +274,7 @@ export default function FinancingPage() {
             <ul className="mt-4 space-y-3">
               {programHighlights.map((item) => (
                 <li key={item} className="flex gap-3 text-neutral-700">
-                  <span aria-hidden className="mt-0.5 shrink-0 font-bold text-[#8a7315]">
+                  <span aria-hidden className="mt-0.5 shrink-0 font-bold text-[#0f4c92]">
                     ✓
                   </span>
                   <span>{item}</span>

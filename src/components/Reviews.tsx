@@ -7,7 +7,7 @@ function Stars({ count = 5 }: { count?: number }) {
   return (
     <div className="mb-3 flex gap-0.5">
       {Array.from({ length: count }).map((_, i) => (
-        <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#dac026">
+        <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#1668c4">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
@@ -50,7 +50,7 @@ export default function Reviews() {
 
       <div className="relative z-10 mx-auto mb-14 max-w-6xl px-4">
         <div ref={titleRef} data-reveal>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4c92]">
             Client Reviews
           </span>
           <h2

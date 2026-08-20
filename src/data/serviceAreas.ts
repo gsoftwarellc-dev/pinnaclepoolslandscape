@@ -431,7 +431,7 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         q: "Do you build outdoor kitchens and full outdoor living areas?",
-        a: "We do — outdoor kitchens, pergolas, fire features, seating walls, and lighting are among the most requested additions on Granite Bay projects, and we build them as part of the same project rather than subcontracting them out.",
+        a: "We do — outdoor kitchens, pergolas, fire features, seating walls, and lighting are among the most requested additions on Granite Bay projects, and we build them as part of the same project rather than as a separate job.",
       },
     ],
     nearby: ["roseville", "folsom", "el-dorado-hills"],

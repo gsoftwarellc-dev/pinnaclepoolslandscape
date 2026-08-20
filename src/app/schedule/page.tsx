@@ -44,7 +44,7 @@ export default function SchedulePage() {
 
       <section className="bg-black">
         <div className="mx-auto max-w-4xl px-4 py-14 text-center sm:py-20">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#dac026]">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1668c4]">
             Free On-Site Consultation
           </span>
           <h1
@@ -73,7 +73,7 @@ export default function SchedulePage() {
                 {expectations.map((item) => (
                   <li key={item.title}>
                     <div className="flex gap-2.5 text-sm font-semibold text-black">
-                      <span aria-hidden className="text-[#8a7315]">
+                      <span aria-hidden className="text-[#0f4c92]">
                         ✓
                       </span>
                       {item.title}
@@ -90,13 +90,13 @@ export default function SchedulePage() {
               <p className="text-sm text-neutral-400">Would you rather talk right now?</p>
               <a
                 href={business.phoneHref}
-                className="mt-3 block rounded-md bg-[#dac026] px-5 py-3 text-sm font-bold text-black transition hover:bg-white"
+                className="mt-3 block rounded-md bg-[#1668c4] px-5 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-[#0f4c92]"
               >
                 Call {business.phone}
               </a>
               <a
                 href={business.smsHref}
-                className="mt-2.5 block rounded-md border border-white/30 px-5 py-3 text-sm font-bold text-white transition hover:border-[#dac026] hover:text-[#dac026]"
+                className="mt-2.5 block rounded-md border border-white/30 px-5 py-3 text-sm font-bold text-white transition hover:border-[#1668c4] hover:text-[#1668c4]"
               >
                 Text Us
               </a>
@@ -109,7 +109,7 @@ export default function SchedulePage() {
               </p>
               <Link
                 href="/estimate"
-                className="mt-4 block rounded-md border border-black/15 px-5 py-3 text-center text-sm font-bold text-black transition hover:border-[#dac026]"
+                className="mt-4 block rounded-md border border-black/15 px-5 py-3 text-center text-sm font-bold text-black transition hover:border-[#1668c4]"
               >
                 Get an Instant Estimate
               </Link>

@@ -19,7 +19,7 @@ export default function FaqSection({
               <h3 className="text-base font-semibold">{faq.q}</h3>
               <span
                 aria-hidden
-                className="shrink-0 text-xl text-[#8a7315] transition-transform group-open:rotate-45"
+                className="shrink-0 text-xl text-[#0f4c92] transition-transform group-open:rotate-45"
               >
                 +
               </span>

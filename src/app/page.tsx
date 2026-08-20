@@ -33,6 +33,15 @@ const stats = [
   { value: "100%", label: "Licensed & Insured", sub: "Family-owned & operated" },
 ];
 
+/* The four phases read design -> plan -> build -> enjoy, so the accent walks from
+   pool blue to landscape green. Full class strings for Tailwind's static scanner. */
+const phaseAccents = [
+  { number: "text-[#4a9eea]", border: "border-[#4a9eea]/30" },
+  { number: "text-[#8fa96e]", border: "border-[#8fa96e]/30" },
+  { number: "text-[#d3bd3c]", border: "border-[#d3bd3c]/30" },
+  { number: "text-[#dac026]", border: "border-[#dac026]/30" },
+] as const;
+
 const homeFaqs: FaqItem[] = [
   {
     q: "How much does a custom pool cost in the Sacramento area?",
@@ -81,7 +90,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-4 pb-12 pt-16 text-center sm:pb-20">
-          <span className="mb-6 rounded-full border border-[#dac026]/40 bg-[#dac026]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#dac026] backdrop-blur">
+          <span className="mb-6 rounded-full border border-white/40 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white backdrop-blur">
             Licensed &amp; Insured · CA Lic. #{business.license}
           </span>
 
@@ -104,8 +113,8 @@ export default function Home() {
           <div className="mt-9 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
             <Link
               href="/estimate"
-              className="btn-glow group w-full justify-center rounded-sm px-8 py-4 text-sm font-bold text-black sm:w-auto"
-              style={{ ["--btn-glow-bg" as string]: "#dac026" }}
+              className="btn-glow group w-full justify-center rounded-sm px-8 py-4 text-sm font-bold text-white sm:w-auto"
+              style={{ ["--btn-glow-bg" as string]: "#1668c4" }}
             >
               Start Your Free 3D Pool Design
               <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">
@@ -114,26 +123,26 @@ export default function Home() {
             </Link>
             <Link
               href="/estimate"
-              className="btn-tactile w-full rounded-sm border border-white/40 bg-white/10 px-8 py-4 text-center text-sm font-bold text-white backdrop-blur transition hover:border-[#dac026] sm:w-auto"
+              className="btn-tactile w-full rounded-sm border border-[#dac026] bg-[#dac026] px-8 py-4 text-center text-sm font-bold text-black transition hover:bg-[#c9b022] hover:border-[#c9b022] sm:w-auto"
             >
               Get an Instant Estimate
             </Link>
           </div>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-neutral-300">
-            <a href={business.phoneHref} className="font-semibold text-white hover:text-[#dac026]">
+            <a href={business.phoneHref} className="font-semibold text-white hover:text-[#1668c4]">
               Call {business.phone}
             </a>
             <span aria-hidden className="hidden text-neutral-600 sm:inline">
               ·
             </span>
-            <a href={business.smsHref} className="font-semibold text-white hover:text-[#dac026]">
+            <a href={business.smsHref} className="font-semibold text-white hover:text-[#1668c4]">
               Text Us
             </a>
             <span aria-hidden className="hidden text-neutral-600 sm:inline">
               ·
             </span>
-            <Link href="/schedule" className="font-semibold text-white hover:text-[#dac026]">
+            <Link href="/schedule" className="font-semibold text-white hover:text-[#1668c4]">
               Book a Consultation
             </Link>
           </div>
@@ -165,18 +174,18 @@ export default function Home() {
       <section className="bg-neutral-50 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4">
           <Reveal className="mx-auto mb-14 max-w-2xl text-center sm:mb-20">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4c92]">
               What We Do
             </span>
             <h2
               className="mt-3 font-bold tracking-tight text-black"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
-              One Contractor, the Entire Backyard
+              Our Services
             </h2>
             <p className="mt-4 text-lg text-neutral-600">
               Pools, spas, decking, concrete, landscaping, turf and fire features — designed
-              together and built by one licensed team, not five subcontractors.
+              together into the backyard you&apos;ve always pictured, built to last for years.
             </p>
           </Reveal>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -193,7 +202,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-24 sm:py-32">
         <div className="grid items-center gap-12 lg:min-h-[36rem] lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4c92]">
               Custom 3D Pool Design
             </span>
             <h2
@@ -217,7 +226,7 @@ export default function Home() {
                 "Licensed, insured, and family-owned since day one",
               ].map((point) => (
                 <li key={point} className="flex gap-3 text-neutral-700">
-                  <span aria-hidden className="mt-0.5 shrink-0 font-bold text-[#8a7315]">
+                  <span aria-hidden className="mt-0.5 shrink-0 font-bold text-[#0f4c92]">
                     ✓
                   </span>
                   <span>{point}</span>
@@ -227,13 +236,13 @@ export default function Home() {
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
                 href="/estimate"
-                className="btn-tactile rounded-md bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#dac026] hover:text-black"
+                className="btn-tactile rounded-md bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#1668c4] hover:text-white"
               >
                 Start Your Free 3D Design
               </Link>
               <Link
                 href="/schedule"
-                className="btn-tactile rounded-md border border-black/15 px-6 py-3 text-sm font-semibold text-black transition hover:border-[#dac026]"
+                className="btn-tactile rounded-md border border-black/15 px-6 py-3 text-sm font-semibold text-black transition hover:border-[#1668c4]"
               >
                 Schedule a Consultation
               </Link>
@@ -257,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* --------------------------------------------------- 4. Explain our process */}
-      <section className="bg-black py-20 sm:py-28">
+      <section className="bg-[#0b2e59] py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4">
           <Reveal className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#dac026]">
@@ -277,10 +286,16 @@ export default function Home() {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {processSummary.map((phase, i) => (
               <Reveal key={phase.number} delay={i * 70}>
-                <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6">
-                  <span className="text-3xl font-bold text-[#dac026]">{phase.number}</span>
+                <div
+                  className={`h-full rounded-2xl border bg-white/5 p-6 transition ${phaseAccents[i % phaseAccents.length].border}`}
+                >
+                  <span
+                    className={`text-3xl font-bold ${phaseAccents[i % phaseAccents.length].number}`}
+                  >
+                    {phase.number}
+                  </span>
                   <h3 className="mt-3 text-xl font-bold text-white">{phase.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-400">{phase.text}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-300">{phase.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -300,7 +315,7 @@ export default function Home() {
       {/* ------------------------------------------------------ Before & after proof */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:py-28">
         <Reveal className="mx-auto mb-12 max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4c92]">
             Before &amp; After
           </span>
           <h2
@@ -325,7 +340,7 @@ export default function Home() {
       <section className="bg-neutral-50 py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4">
           <Reveal className="mx-auto mb-12 max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4c92]">
               Learn Before You Build
             </span>
             <h2
@@ -345,12 +360,12 @@ export default function Home() {
               <Reveal key={resource.slug} delay={i * 70}>
                 <Link
                   href={`/resources/${resource.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-neutral-200 bg-white p-6 transition hover:border-[#dac026] hover:shadow-md"
+                  className="group flex h-full flex-col rounded-2xl border border-neutral-200 bg-white p-6 transition hover:border-[#1668c4] hover:shadow-md"
                 >
                   <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
                     {resource.readTime}
                   </span>
-                  <h3 className="mt-2 text-lg font-bold leading-snug text-black group-hover:text-[#8a7315]">
+                  <h3 className="mt-2 text-lg font-bold leading-snug text-black group-hover:text-[#0f4c92]">
                     {resource.title}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-600">
@@ -370,7 +385,7 @@ export default function Home() {
           <Reveal className="mt-10 text-center">
             <Link
               href="/resources"
-              className="btn-tactile inline-block rounded-md border border-black/15 px-7 py-3.5 text-sm font-semibold text-black transition hover:border-[#dac026]"
+              className="btn-tactile inline-block rounded-md border border-black/15 px-7 py-3.5 text-sm font-semibold text-black transition hover:border-[#1668c4]"
             >
               Browse All Guides →
             </Link>
@@ -392,7 +407,7 @@ export default function Home() {
         />
         <div className="relative z-10 mx-auto grid max-w-5xl items-center gap-12 px-4 lg:grid-cols-2">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#dac026]">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1668c4]">
               Let&apos;s Get Started
             </span>
             <h2
@@ -409,14 +424,14 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/estimate"
-                className="btn-glow rounded-sm px-6 py-3.5 text-sm font-bold text-black"
-                style={{ ["--btn-glow-bg" as string]: "#dac026" }}
+                className="btn-glow rounded-sm px-6 py-3.5 text-sm font-bold text-white"
+                style={{ ["--btn-glow-bg" as string]: "#1668c4" }}
               >
                 Get an Instant Estimate
               </Link>
               <Link
                 href="/schedule"
-                className="btn-tactile rounded-md border border-white/40 px-6 py-3.5 text-sm font-bold text-white transition hover:border-[#dac026] hover:text-[#dac026]"
+                className="btn-tactile rounded-md border border-white/40 px-6 py-3.5 text-sm font-bold text-white transition hover:border-[#1668c4] hover:text-[#1668c4]"
               >
                 Book a Consultation
               </Link>
@@ -435,7 +450,7 @@ export default function Home() {
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4">
           <Reveal className="mx-auto mb-12 max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a7315]">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4c92]">
               Where We Work
             </span>
             <h2
@@ -453,7 +468,7 @@ export default function Home() {
               <Link
                 key={area.slug}
                 href={`/service-areas/${area.slug}`}
-                className="rounded-lg border border-black/10 bg-neutral-50 px-4 py-3.5 text-center text-sm font-semibold text-black transition hover:border-[#dac026] hover:bg-[#fbf8e8]"
+                className="rounded-lg border border-black/10 bg-neutral-50 px-4 py-3.5 text-center text-sm font-semibold text-black transition hover:border-[#1668c4] hover:bg-[#f2f7fd]"
               >
                 {area.city}, {area.state}
               </Link>

@@ -34,7 +34,7 @@ export default function ResourcesPage() {
 
       <section className="bg-black">
         <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:py-24">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#dac026]">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1668c4]">
             Learn Before You Build
           </span>
           <h1
@@ -59,7 +59,7 @@ export default function ResourcesPage() {
 
           return (
             <div key={category} className="mb-14 last:mb-0">
-              <h2 className="mb-6 text-sm font-bold uppercase tracking-[0.16em] text-[#8a7315]">
+              <h2 className="mb-6 text-sm font-bold uppercase tracking-[0.16em] text-[#0f4c92]">
                 {category}
               </h2>
               <div className="grid gap-5 md:grid-cols-2">
@@ -67,12 +67,12 @@ export default function ResourcesPage() {
                   <Reveal key={resource.slug} delay={i * 60}>
                     <Link
                       href={`/resources/${resource.slug}`}
-                      className="group flex h-full flex-col rounded-2xl border border-neutral-200 bg-white p-6 transition hover:border-[#dac026] hover:shadow-md"
+                      className="group flex h-full flex-col rounded-2xl border border-neutral-200 bg-white p-6 transition hover:border-[#1668c4] hover:shadow-md"
                     >
                       <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
                         {resource.readTime}
                       </span>
-                      <h3 className="mt-2 text-xl font-bold leading-snug text-black group-hover:text-[#8a7315]">
+                      <h3 className="mt-2 text-xl font-bold leading-snug text-black group-hover:text-[#0f4c92]">
                         {resource.title}
                       </h3>
                       <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-600">

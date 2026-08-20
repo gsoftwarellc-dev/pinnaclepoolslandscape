@@ -43,7 +43,7 @@ export const services: Service[] = [
     metaDescription:
       "Custom in-ground pool construction with free 3D design models. Licensed, insured, family-owned pool builder serving the greater Sacramento region.",
     longIntro: [
-      "Building a custom swimming pool is one of the biggest upgrades you can make to your home — and one of the most rewarding. As an experienced in-ground pool builder, we handle every stage of pool construction in-house: design, engineering, excavation, gunite, plumbing, tile, plaster, and startup. Because one licensed contractor owns the whole process, nothing gets lost between subcontractors and your timeline stays predictable.",
+      "Building a custom swimming pool is one of the biggest upgrades you can make to your home — and one of the most rewarding. As an experienced in-ground pool builder, we take responsibility for your project from first design through startup — one contract, one schedule, one company accountable for the result. Because one licensed contractor owns the whole process, nothing gets lost between stages and your timeline stays predictable.",
       "Every pool we build starts with a free 3D design model. You'll see the exact shape, depth, decking, and features of your new swimming pool rendered on your actual lot before we ever break ground — so you can move the spa, widen the baja shelf, or change the water feature while changes are still free. Once you approve the design, we engineer the structure for your soil, grade, and drainage, pull the permits, and build to code.",
       "From compact plunge pools for smaller suburban lots to large freeform pools with spas, tanning ledges, waterfalls, and automation, our team builds swimming pools designed around how your family will actually use the backyard.",
     ],
@@ -102,7 +102,7 @@ export const services: Service[] = [
       },
       {
         q: "Can you build a pool on a sloped or small lot?",
-        a: "Yes. Sloped lots often need engineered retaining walls or raised bond beams, and small lots suit plunge pools and geometric designs. Because we also do concrete, retaining walls, and landscaping in-house, we can solve grading challenges that pool-only companies subcontract out.",
+        a: "Yes. Sloped lots often need engineered retaining walls or raised bond beams, and small lots suit plunge pools and geometric designs. Because we take on concrete, retaining walls, and landscaping as part of the same contract, grading challenges get solved within your project instead of becoming a second job you have to arrange yourself.",
       },
     ],
     related: ["3d-pool-design", "pool-decks", "pool-remodeling"],
@@ -362,7 +362,7 @@ export const services: Service[] = [
       "Full-service landscaping company — design, installation, irrigation, lighting, and drainage for front and back yards in the Sacramento area.",
     longIntro: [
       "Great landscaping is a system, not a shopping list of plants. Our landscape design and installation service plans your entire yard as one project — planting, irrigation, lighting, drainage, lawn, and hardscape — so everything works together and thrives in the Sacramento Valley climate.",
-      "We design for how you'll actually live in the space: entertaining areas that flow from the back door, low-water planting beds that look good year-round, lawn where kids and pets need it, and drip irrigation zoned so every plant gets what it needs without wasting water. Because we also build pools, patios, and concrete in-house, your landscape and hardscape are designed together instead of colliding later.",
+      "We design for how you'll actually live in the space: entertaining areas that flow from the back door, low-water planting beds that look good year-round, lawn where kids and pets need it, and drip irrigation zoned so every plant gets what it needs without wasting water. Because we also build pools, patios, and concrete, your landscape and hardscape are designed together instead of colliding later.",
       "Northern California's hot, dry summers demand water-wise choices. We favor proven Mediterranean and California-native plantings, high-efficiency irrigation, and smart controllers that adjust to the weather — landscapes that stay beautiful in August without a shocking water bill.",
     ],
     benefits: [

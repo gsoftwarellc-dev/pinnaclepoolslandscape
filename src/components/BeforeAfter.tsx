@@ -47,7 +47,7 @@ function Comparison({ pair }: { pair: BeforeAfterPair }) {
         <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur">
           {pair.beforeLabel}
         </span>
-        <span className="pointer-events-none absolute right-3 top-3 rounded-full bg-[#dac026] px-3 py-1 text-xs font-bold uppercase tracking-wider text-black">
+        <span className="pointer-events-none absolute right-3 top-3 rounded-full bg-[#1668c4] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
           {pair.afterLabel}
         </span>
 
@@ -74,7 +74,7 @@ function Comparison({ pair }: { pair: BeforeAfterPair }) {
       </div>
 
       <figcaption className="p-5">
-        <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8a7315]">
+        <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[#0f4c92]">
           {pair.location}
         </div>
         <h3 className="mt-1.5 text-lg font-bold text-black">{pair.title}</h3>
