@@ -10,7 +10,7 @@ import { business } from "@/data/business";
  *
  *   LEAD_WEBHOOK_URL  — any HTTPS endpoint (Zapier, Make, a CRM, Slack incoming webhook).
  *   RESEND_API_KEY    — sends the lead as an email via Resend.
- *   LEAD_TO_EMAIL     — recipient for the Resend email (defaults to business.leadEmail).
+ *   LEAD_TO_EMAIL     — recipient for the Resend email (defaults to business.email).
  *   LEAD_FROM_EMAIL   — verified Resend sender address.
  *
  * With none of them set the endpoint still succeeds, so the front end never breaks —
@@ -54,7 +54,7 @@ async function sendEmail(lead: LeadPayload) {
   const from = process.env.LEAD_FROM_EMAIL;
   if (!apiKey || !from) return;
 
-  const to = process.env.LEAD_TO_EMAIL || business.leadEmail;
+  const to = process.env.LEAD_TO_EMAIL || business.email;
   const subject = `New ${lead.source ?? "website"} lead — ${lead.name ?? "unknown"}`;
 
   await fetch("https://api.resend.com/emails", {

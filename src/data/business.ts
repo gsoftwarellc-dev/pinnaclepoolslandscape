@@ -8,13 +8,12 @@ export const business = {
   phoneHref: "tel:+19163365711",
   /** Tap-to-text target used by the mobile action bar and call/text CTA pairs. */
   smsHref: "sms:+19163365711",
-  email: "info@pinnaclepoolslandscape.com",
   /**
-   * Where form submissions are emailed. Deliberately separate from `email` above:
-   * that one is published on the site, this one is not, so it stays out of reach of
-   * address scrapers. Overridable at deploy time with LEAD_TO_EMAIL.
+   * Single contact address for the whole site: shown on the contact page and in the
+   * organization schema, and used as the recipient for lead notification emails.
+   * The lead recipient is overridable at deploy time with LEAD_TO_EMAIL.
    */
-  leadEmail: "terry@pinnacleyard.com",
+  email: "terry@pinnacleyard.com",
   address: {
     street: "9400 Foxford Ct",
     city: "Elk Grove",
