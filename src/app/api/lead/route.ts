@@ -52,12 +52,18 @@ async function forwardToWebhook(lead: LeadPayload) {
 async function sendEmail(lead: LeadPayload) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.LEAD_FROM_EMAIL;
-  if (!apiKey || !from) return;
+  if (!apiKey || !from) {
+    // Loud on purpose: an unset variable here is the difference between a lead reaching
+    // the business and sitting unnoticed in a log line.
+    const missing = [!apiKey && "RESEND_API_KEY", !from && "LEAD_FROM_EMAIL"].filter(Boolean);
+    console.warn(`[lead] email skipped — missing ${missing.join(" and ")}`);
+    return;
+  }
 
   const to = process.env.LEAD_TO_EMAIL || business.email;
   const subject = `New ${lead.source ?? "website"} lead — ${lead.name ?? "unknown"}`;
 
-  await fetch("https://api.resend.com/emails", {
+  const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -71,6 +77,10 @@ async function sendEmail(lead: LeadPayload) {
       reply_to: isNonEmptyString(lead.email) ? lead.email : undefined,
     }),
   });
+
+  if (!response.ok) {
+    throw new Error(`Resend rejected the send (${response.status}): ${await response.text()}`);
+  }
 }
 
 export async function POST(request: Request) {
