@@ -3,11 +3,11 @@ export const business = {
   tagline: "Enjoy your stay",
   description:
     "Family-owned pool construction and landscaping contractor serving the greater Sacramento region. Licensed and insured, with 20+ years of concrete and construction experience.",
-  phone: "(916) 604-1700",
+  phone: "(916) 336-5711",
   phoneSecondary: "(615) 754-2937",
-  phoneHref: "tel:+19166041700",
+  phoneHref: "tel:+19163365711",
   /** Tap-to-text target used by the mobile action bar and call/text CTA pairs. */
-  smsHref: "sms:+19166041700",
+  smsHref: "sms:+19163365711",
   email: "info@pinnaclepoolslandscape.com",
   address: {
     street: "9400 Foxford Ct",
