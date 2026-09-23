@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Raw camera originals for the gallery (472MB). The optimized, web-ready
+# derivatives in public/gallery/ are what ship; regenerate with
+# scripts/optimize_gallery.py.
+updated_gallery_image/
