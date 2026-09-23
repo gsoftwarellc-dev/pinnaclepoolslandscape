@@ -67,22 +67,26 @@ export default function GalleryGrid() {
         })}
       </div>
 
-      <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
+      {/*
+        A real grid rather than CSS columns: masonry fills top-to-bottom down
+        each column, which scrambles the curated order. Uniform 4:3 tiles keep
+        photos reading left-to-right across each row.
+      */}
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((img, i) => (
           <button
             key={img.slug}
             type="button"
             onClick={() => setOpenIndex(i)}
-            className="mb-4 block w-full break-inside-avoid overflow-hidden rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1668c4]"
+            className="group relative block aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1668c4]"
           >
             <Image
               src={img.src}
               alt={img.alt}
-              width={img.width}
-              height={img.height}
+              fill
               loading={i < 6 ? "eager" : "lazy"}
               priority={i < 3}
-              className="w-full rounded-lg object-cover transition hover:opacity-90"
+              className="object-cover transition duration-300 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           </button>
