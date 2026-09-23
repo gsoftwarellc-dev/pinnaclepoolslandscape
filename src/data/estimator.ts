@@ -58,7 +58,7 @@ export const projectTypes: Option[] = [
     label: "Landscape / Hardscape Only",
     hint: "No pool — decking, turf, concrete or outdoor living",
     price: r(0, 0),
-    image: "/gallery/Artificial-Turf.jpg",
+    image: "/gallery/pinnacle-pools-artificial-turf-lawn-side-yard-1200.webp",
   },
 ];
 

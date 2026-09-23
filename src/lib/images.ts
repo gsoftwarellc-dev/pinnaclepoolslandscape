@@ -82,15 +82,15 @@ const bonusImages: Record<string, PickedImage[]> = {
 
 /** Maps each service slug to the gallery categories most relevant to it, in priority order. */
 const serviceCategoryMap: Record<string, GalleryImage["category"][]> = {
-  "pool-construction": ["pool-construction"],
-  "pool-remodeling": ["pool-construction"],
+  "pool-construction": ["pool-construction", "water-features"],
+  "pool-remodeling": ["pool-construction", "water-features"],
   "3d-pool-design": ["pool-construction"],
-  "pool-decks": ["pool-construction", "concrete-driveways"],
-  landscaping: ["landscaping", "artificial-turf"],
+  "pool-decks": ["pool-construction", "concrete-driveways", "outdoor-living"],
+  landscaping: ["outdoor-living", "artificial-turf", "concrete-driveways"],
   "driveway-walkway": ["concrete-driveways"],
-  "fire-pits": ["fire-pits", "concrete-driveways"],
-  "artificial-turf": ["artificial-turf", "landscaping"],
-  "concrete-services": ["concrete-driveways"],
+  "fire-pits": ["fire-pits", "outdoor-living"],
+  "artificial-turf": ["artificial-turf", "outdoor-living"],
+  "concrete-services": ["concrete-driveways", "outdoor-living"],
 };
 
 function hashString(input: string): number {
@@ -103,10 +103,10 @@ function hashString(input: string): number {
 
 function galleryToPicked(img: GalleryImage): PickedImage {
   return {
-    src: `/gallery/${img.file}`,
+    src: img.src,
     width: img.width,
     height: img.height,
-    alt: img.title,
+    alt: img.alt,
   };
 }
 

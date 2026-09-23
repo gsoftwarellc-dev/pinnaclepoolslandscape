@@ -44,8 +44,8 @@ export default function ServicesPage() {
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
             <Image
-              src="/gallery/Pinnacle-Pool-Construction.jpg"
-              alt="A completed pool and hardscape project by Pinnacle Pools and Landscape"
+              src="/gallery/pinnacle-pools-geometric-pool-spa-water-feature-deck-2000.webp"
+              alt="A completed pool, spa, and water feature project by Pinnacle Pools and Landscape"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

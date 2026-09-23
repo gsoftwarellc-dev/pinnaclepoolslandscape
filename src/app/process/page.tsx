@@ -62,7 +62,7 @@ export default function ProcessPage() {
 
       <section className="relative overflow-hidden bg-black">
         <Image
-          src="/gallery/Pinnacle-Pool-Construction.jpg"
+          src="/gallery/pinnacle-pools-pool-spa-construction-coping-installation-2000.webp"
           alt="Pool under construction by Pinnacle Pools and Landscape"
           fill
           priority
