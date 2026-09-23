@@ -24,12 +24,22 @@ RULES = [
     ('concrete-driveways', ('driveway', 'concrete-patio', 'walkway', 'paver')),
 ]
 
-# Lead photos, in order. These open the grid regardless of alphabetical
-# position, so the strongest work is what a visitor sees first.
+# Lead photos, in grid order (left to right, top to bottom). These open the
+# grid regardless of alphabetical position, so the strongest work is what a
+# visitor sees first.
 FEATURED = [
-    'pinnacle-pools-pool-water-features-landscape-lighting-night',
+    'pinnacle-pools-pool-raised-spa-glass-tile-spillway',
+    'pinnacle-pools-pool-spa-stamped-concrete-deck-turf',
+    'pinnacle-pools-pool-construction-shell-fence-view',
+    'pinnacle-pools-freeform-pool-color-led-lighting-landscape',
+    'pinnacle-pools-geometric-pool-spa-pebble-finish',
+    'pinnacle-pools-rectangular-pool-spa-pergola-cabana',
     'pinnacle-pools-pool-step-tile-mosaic-detail',
     'pinnacle-pools-outdoor-fireplace-fire-pit-seating-pool',
+    'pinnacle-pools-pool-landscape-paver-walkway-turf',
+    'pinnacle-pools-pool-glass-mosaic-tile-raised-wall',
+    'pinnacle-pools-rock-waterfall-pool-slide',
+    'pinnacle-pools-freeform-pool-fire-pit-fireplace-backyard',
 ]
 
 
