@@ -24,6 +24,15 @@ RULES = [
     ('concrete-driveways', ('driveway', 'concrete-patio', 'walkway', 'paver')),
 ]
 
+# Lead photos, in order. These open the grid regardless of alphabetical
+# position, so the strongest work is what a visitor sees first.
+FEATURED = [
+    'pinnacle-pools-pool-water-features-landscape-lighting-night',
+    'pinnacle-pools-pool-step-tile-mosaic-detail',
+    'pinnacle-pools-outdoor-fireplace-fire-pit-seating-pool',
+]
+
+
 def category(slug: str) -> str:
     s = slug.replace('pinnacle-pools-', '')
     for cat, keys in RULES:
@@ -43,7 +52,13 @@ def title(slug: str) -> str:
     return ' '.join(out)
 
 rows = []
-for e in sorted(m, key=lambda e: e['slug']):
+def sort_key(entry):
+    slug = entry['slug']
+    rank = FEATURED.index(slug) if slug in FEATURED else len(FEATURED)
+    return (rank, slug)
+
+
+for e in sorted(m, key=sort_key):
     grid = min(e['srcset'], key=lambda s: s['width'])
     wide = max(e['srcset'], key=lambda s: s['width'])
     rows.append({
@@ -58,6 +73,10 @@ for e in sorted(m, key=lambda e: e['slug']):
         'title': title(e['slug']),
         'category': category(e['slug']),
     })
+
+missing = [f for f in FEATURED if f not in {e['slug'] for e in m}]
+if missing:
+    raise SystemExit(f'FEATURED slug not in manifest: {missing}')
 
 order = ['pool-construction', 'water-features', 'fire-pits', 'outdoor-living',
          'artificial-turf', 'concrete-driveways', 'landscaping']
