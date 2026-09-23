@@ -132,8 +132,6 @@ NAMES: dict[str, str] = {
     '_MG_4404': 'garden-statuary-stone-veneer-wall',
     '_MG_4411': 'circular-fire-pit-curved-bench-seating',
     '_MG_4417': 'pool-glass-tile-mosaic-band-detail',
-    '_MG_4422': 'circular-fire-pit-lounge-seating-night',
-    '_MG_4423': 'circular-fire-pit-seating-pool-spa',
     '_MG_4425': 'pool-mosaic-tile-waterline-detail',
     '_MG_4434': 'outdoor-fireplace-fire-pit-patio-night',
     '_MG_4439': 'freeform-pool-fire-pit-fireplace-backyard',
@@ -146,6 +144,13 @@ NAMES: dict[str, str] = {
 }
 
 GENERIC = "custom-pool-landscape-sacramento"
+
+# Near-duplicate frames: several angles of the same feature shot minutes apart.
+# We publish the widest, most complete frame of each and skip the rest.
+SKIP = {
+    '_MG_4422',   # circular fire pit - tighter crop of _MG_4411
+    '_MG_4423',   # circular fire pit - tighter crop of _MG_4411
+}
 
 
 def load(path: Path) -> Image.Image:
@@ -221,10 +226,12 @@ def main() -> int:
         return 1
 
     files = sorted(p for p in SRC.iterdir() if p.is_file() and not p.name.startswith("."))
-    images = [p for p in files if p.suffix.lower() in IMAGE_EXT]
+    images = [p for p in files
+              if p.suffix.lower() in IMAGE_EXT and p.stem not in SKIP]
     videos = [p for p in files if p.suffix.lower() in VIDEO_EXT]
 
-    print(f"{len(images)} images, {len(videos)} videos skipped")
+    print(f"{len(images)} images, {len(videos)} videos and "
+          f"{len(SKIP)} near-duplicates skipped")
     if args.dry_run:
         return 0
 

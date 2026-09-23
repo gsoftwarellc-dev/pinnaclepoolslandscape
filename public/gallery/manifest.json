@@ -1699,48 +1699,6 @@
     "original": "_MG_4417.JPG"
   },
   {
-    "slug": "pinnacle-pools-circular-fire-pit-lounge-seating-night",
-    "alt": "Circular fire pit lounge seating night by Pinnacle Pools and Landscape, Sacramento CA",
-    "src": "/gallery/pinnacle-pools-circular-fire-pit-lounge-seating-night-2000.webp",
-    "fallback": "/gallery/pinnacle-pools-circular-fire-pit-lounge-seating-night-1200.jpg",
-    "width": 2000,
-    "height": 1333,
-    "srcset": [
-      {
-        "src": "/gallery/pinnacle-pools-circular-fire-pit-lounge-seating-night-1200.webp",
-        "width": 1200,
-        "height": 800
-      },
-      {
-        "src": "/gallery/pinnacle-pools-circular-fire-pit-lounge-seating-night-2000.webp",
-        "width": 2000,
-        "height": 1333
-      }
-    ],
-    "original": "_MG_4422.JPG"
-  },
-  {
-    "slug": "pinnacle-pools-circular-fire-pit-seating-pool-spa",
-    "alt": "Circular fire pit seating pool spa by Pinnacle Pools and Landscape, Sacramento CA",
-    "src": "/gallery/pinnacle-pools-circular-fire-pit-seating-pool-spa-2000.webp",
-    "fallback": "/gallery/pinnacle-pools-circular-fire-pit-seating-pool-spa-1200.jpg",
-    "width": 2000,
-    "height": 1333,
-    "srcset": [
-      {
-        "src": "/gallery/pinnacle-pools-circular-fire-pit-seating-pool-spa-1200.webp",
-        "width": 1200,
-        "height": 800
-      },
-      {
-        "src": "/gallery/pinnacle-pools-circular-fire-pit-seating-pool-spa-2000.webp",
-        "width": 2000,
-        "height": 1333
-      }
-    ],
-    "original": "_MG_4423.JPG"
-  },
-  {
     "slug": "pinnacle-pools-pool-mosaic-tile-waterline-detail",
     "alt": "Pool mosaic tile waterline detail by Pinnacle Pools and Landscape, Sacramento CA",
     "src": "/gallery/pinnacle-pools-pool-mosaic-tile-waterline-detail-2000.webp",
