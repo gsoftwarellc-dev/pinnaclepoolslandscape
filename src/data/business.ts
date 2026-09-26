@@ -21,6 +21,12 @@ export const business = {
     zip: "95758",
   },
   url: "https://pinnaclepoolslandscape.com",
+  /**
+   * Google Tag Manager container. GA4 and any ad/conversion tags are configured
+   * inside the container, so they do not need code changes here. Set to "" to
+   * turn off all tag loading site-wide.
+   */
+  gtmId: "GTM-PD2SV8R4",
   founder: "Terry Neeley",
   license: "892669",
   social: {
