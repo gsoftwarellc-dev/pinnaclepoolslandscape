@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import { business } from "@/data/business";
 import { serviceAreas } from "@/data/serviceAreas";
+import { LEAD_ENDPOINT } from "@/lib/leadEndpoint";
 import {
   budgetRanges,
   calculateEstimate,
@@ -695,7 +696,7 @@ export default function EstimateWizard() {
     setSending(true);
     setError(null);
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch(LEAD_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ source: "instant-estimate", ...answers }),

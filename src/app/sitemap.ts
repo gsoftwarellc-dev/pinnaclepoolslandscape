@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 import { business } from "@/data/business";
+
+// Emitted as a file at build time so the static export can include it.
+export const dynamic = "force-static";
 import { services } from "@/data/services";
 import { serviceAreas } from "@/data/serviceAreas";
 import { resources } from "@/data/resources";

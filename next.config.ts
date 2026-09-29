@@ -1,16 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Bundles only the files needed to run into .next/standalone, so the app can be
-  // deployed as a self-contained zip without shipping node_modules.
-  output: "standalone",
-  async redirects() {
-    return [
-      // The old flat quote form was replaced by the multi-step estimate tool. Kept as a
-      // permanent redirect so existing links, ads, and indexed URLs land on the new flow.
-      { source: "/quote", destination: "/estimate", permanent: true },
-    ];
-  },
+  /*
+   * Static export for Apache/PHP hosting, which cannot run a Node server.
+   *
+   * Two consequences handled elsewhere:
+   *   - /api/lead does not exist in an export, so the forms post to /api/lead.php
+   *     (see public/api/lead.php) and NEXT_PUBLIC_LEAD_ENDPOINT points at it.
+   *   - redirects() is not supported, so the /quote -> /estimate redirect moves
+   *     into .htaccess.
+   */
+  output: "export",
+  // The export has no server to resize images, so originals are served as-is.
+  images: { unoptimized: true },
+  // Emits each route as a directory with index.html, which is what Apache serves by default.
+  trailingSlash: true,
 };
 
 export default nextConfig;

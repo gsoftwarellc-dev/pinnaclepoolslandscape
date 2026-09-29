@@ -44,3 +44,6 @@ next-env.d.ts
 # derivatives in public/gallery/ are what ship; regenerate with
 # scripts/optimize_gallery.py.
 updated_gallery_image/
+
+# Holds the Resend API key for the PHP lead endpoint
+public/api/config.php

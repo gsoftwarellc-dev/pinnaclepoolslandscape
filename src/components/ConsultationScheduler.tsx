@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { business } from "@/data/business";
+import { LEAD_ENDPOINT } from "@/lib/leadEndpoint";
 
 const TIME_SLOTS = [
   { value: "8-10", label: "8:00 – 10:00 AM" },
@@ -76,7 +77,7 @@ export default function ConsultationScheduler() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch(LEAD_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

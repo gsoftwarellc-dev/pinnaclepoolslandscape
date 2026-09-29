@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { business } from "@/data/business";
+import { LEAD_ENDPOINT } from "@/lib/leadEndpoint";
 
 /**
  * Three-field lead capture dropped inline on service, area and resource pages so a visitor
@@ -33,7 +34,7 @@ export default function QuickLeadForm({
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch(LEAD_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ source, name, phone, zip, project }),
