@@ -1,11 +1,24 @@
 import type { MetadataRoute } from "next";
 import { business } from "@/data/business";
-
-// Emitted as a file at build time so the static export can include it.
-export const dynamic = "force-static";
 import { services } from "@/data/services";
 import { serviceAreas } from "@/data/serviceAreas";
 import { resources } from "@/data/resources";
+
+// Emitted as a file at build time so the static export can include it.
+export const dynamic = "force-static";
+
+/*
+ * The static export sets trailingSlash, so it serves /services/ and 301s
+ * /services. Listing the un-slashed form would point every sitemap entry at a
+ * redirect, so the URLs are built to match whatever the current target serves.
+ */
+const useTrailingSlash = process.env.STATIC_EXPORT === "1";
+
+function url(path: string): string {
+  const absolute = new URL(path, business.url).toString();
+  if (!useTrailingSlash || absolute.endsWith("/")) return absolute;
+  return `${absolute}/`;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -20,28 +33,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/financing",
     "/contact",
   ].map((path) => ({
-    url: new URL(path, business.url).toString(),
+    url: url(path),
     lastModified: new Date(),
   }));
 
   const resourceRoutes = resources.map((r) => ({
-    url: new URL(`/resources/${r.slug}`, business.url).toString(),
+    url: url(`/resources/${r.slug}`),
     lastModified: new Date(),
   }));
 
   const serviceRoutes = services.map((s) => ({
-    url: new URL(`/services/${s.slug}`, business.url).toString(),
+    url: url(`/services/${s.slug}`),
     lastModified: new Date(),
   }));
 
   const areaRoutes = serviceAreas.map((a) => ({
-    url: new URL(`/service-areas/${a.slug}`, business.url).toString(),
+    url: url(`/service-areas/${a.slug}`),
     lastModified: new Date(),
   }));
 
   const areaServiceRoutes = serviceAreas.flatMap((a) =>
     services.map((s) => ({
-      url: new URL(`/service-areas/${a.slug}/${s.slug}`, business.url).toString(),
+      url: url(`/service-areas/${a.slug}/${s.slug}`),
       lastModified: new Date(),
     })),
   );
