@@ -24,6 +24,8 @@ trap restore EXIT
 rm -rf "$STASH_DIR" out
 mv "$API_DIR" "$STASH_DIR"
 
-NEXT_PUBLIC_LEAD_ENDPOINT="${NEXT_PUBLIC_LEAD_ENDPOINT:-/api/lead.php}" npx next build
+STATIC_EXPORT=1 \
+  NEXT_PUBLIC_LEAD_ENDPOINT="${NEXT_PUBLIC_LEAD_ENDPOINT:-/api/lead.php}" \
+  npx next build
 
 echo "static export written to out/"
