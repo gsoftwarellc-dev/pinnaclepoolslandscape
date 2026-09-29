@@ -35,6 +35,15 @@ export const metadata: Metadata = {
     title: business.name,
     description: business.description,
   },
+  /**
+   * Google Search Console ownership token, set as GOOGLE_SITE_VERIFICATION in the
+   * Vercel project. Renders the google-site-verification meta tag. Omitted when
+   * unset so the tag never ships empty. Verifying through the GTM container works
+   * too and needs no token at all.
+   */
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+    : {}),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

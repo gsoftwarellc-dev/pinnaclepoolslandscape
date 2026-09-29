@@ -20,7 +20,12 @@ export const business = {
     state: "CA",
     zip: "95758",
   },
-  url: "https://pinnaclepoolslandscape.com",
+  /**
+   * Canonical origin. The apex redirects to www at the domain level, so this must
+   * stay on www — canonical tags and every sitemap URL derive from it, and pointing
+   * them at a URL that 308s wastes crawl budget.
+   */
+  url: "https://www.pinnaclepoolslandscape.com",
   /**
    * Google Tag Manager container. GA4 and any ad/conversion tags are configured
    * inside the container, so they do not need code changes here. Set to "" to
