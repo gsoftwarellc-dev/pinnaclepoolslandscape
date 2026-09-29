@@ -6,7 +6,7 @@ import { services, getServiceBySlug, getRelatedServices } from "@/data/services"
 import { serviceAreas } from "@/data/serviceAreas";
 import { business } from "@/data/business";
 import { serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
-import { pickServiceImages } from "@/lib/images";
+import { pickServiceImages, SERVICE_PAGE_SEED } from "@/lib/images";
 import CtaBanner from "@/components/CtaBanner";
 import FaqSection from "@/components/FaqSection";
 
@@ -39,7 +39,7 @@ export default async function ServicePage({
   if (!service) notFound();
 
   const related = getRelatedServices(service);
-  const [heroImage, ...gridImages] = pickServiceImages(service.slug, "hero", 5);
+  const [heroImage, ...gridImages] = pickServiceImages(service.slug, SERVICE_PAGE_SEED, 5);
 
   const jsonLd = [
     serviceJsonLd({

@@ -93,6 +93,21 @@ const serviceCategoryMap: Record<string, GalleryImage["category"][]> = {
   "concrete-services": ["concrete-driveways", "outdoor-living"],
 };
 
+/**
+ * Seed used by the standalone /services/[slug] pages. The area pages seed with a
+ * city slug instead, so they keep rotating photos per city.
+ */
+export const SERVICE_PAGE_SEED = "hero";
+
+/**
+ * Hero photos pinned for the standalone /services/[slug] pages, overriding the
+ * deterministic rotation below. Keyed by service slug; the rotation still supplies
+ * the remaining grid images.
+ */
+const pinnedServicePageHeroes: Record<string, string> = {
+  "pool-construction": "pinnacle-pools-pool-raised-spa-glass-tile-spillway",
+};
+
 function hashString(input: string): number {
   let hash = 0;
   for (let i = 0; i < input.length; i++) {
@@ -129,6 +144,20 @@ export function pickServiceImages(serviceSlug: string, seed: string, count: numb
   for (let i = 0; i < count && i < candidates.length; i++) {
     picked.push(candidates[(start + i) % candidates.length]);
   }
+
+  // A pinned hero always leads, and is de-duped out of the remaining slots so the
+  // same photo never appears twice on one page. Only the standalone service pages
+  // pin; area pages keep their per-city rotation.
+  const pinnedSlug =
+    seed === SERVICE_PAGE_SEED ? pinnedServicePageHeroes[serviceSlug] : undefined;
+  if (pinnedSlug) {
+    const pinned = galleryImages.find((img) => img.slug === pinnedSlug);
+    if (pinned) {
+      const rest = picked.filter((img) => img.src !== pinned.src);
+      return [galleryToPicked(pinned), ...rest].slice(0, count);
+    }
+  }
+
   return picked;
 }
 
